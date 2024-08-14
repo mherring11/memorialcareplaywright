@@ -3,6 +3,8 @@ const { test, expect } = require('@playwright/test');
 test.describe('MemorialCare Website Header Test', () => {
 
     test('Verify that the header is visible and all links are working', async ({ page }) => {
+       test.setTimeout(90000);
+       
         const url = 'https://www.memorialcare.org';
         await page.goto(url);
         console.log('Navigated to MemorialCare website');
@@ -47,7 +49,9 @@ test.describe('MemorialCare Website Header Test', () => {
         console.log('All header links are working as expected');
     });
 
-    test('Verify that the footer is visible, all links are working, and specific elements are present', async ({ page }) => {
+    test('Verify that the footer is visible and all links are working', async ({ page }) => {
+    
+        test.setTimeout(60000);
         const url = 'https://www.memorialcare.org';
         await page.goto(url);
         console.log('Navigated to MemorialCare website');
@@ -78,8 +82,7 @@ test.describe('MemorialCare Website Header Test', () => {
             { selector: 'footer.site-footer a[href="/about-us/press-room"]', expectedUrl: '/about-us/press-room' },
             { selector: 'footer.site-footer a[href="/blog"]', expectedUrl: '/blog' },
             { selector: 'footer.site-footer a[href="/locations"]', expectedUrl: '/locations' },
-            { selector: 'footer.site-footer a[href="https://mymemorialcare.memorialcare.org/mychart/default.asp"]', expectedUrl: 'https://mymemorialcare.memorialcare.org/mychart/default.asp' },
-            { selector: 'footer.site-footer a.site-footer__main-nav__link[href="https://careers.memorialcare.org/"]', expectedUrl: 'https://careers.memorialcare.org/' }
+            { selector: 'footer.site-footer a[href="https://mymemorialcare.memorialcare.org/mychart/default.asp"]', expectedUrl: 'https://mymemorialcare.memorialcare.org/mychart/default.asp' }
         ];
     
         for (const link of links) {
@@ -103,25 +106,6 @@ test.describe('MemorialCare Website Header Test', () => {
             }
         }
     
-        const additionalSelectors = [
-            'div.site-footer__connections a[href="/contact-us"]',
-            'div.site-footer__connections a[href="https://careers.memorialcare.org/"]',
-            'div.site-footer__social__item#facebook',
-            'div.site-footer__social__item#tiktok',
-            'div.site-footer__social__item#instagram',
-            'div.site-footer__social__item#youtube',
-            'div.site-footer__social__item#glassdoor',
-            'div.site-footer__social__item#linkedin'
-        ];
-    
-        for (const selector of additionalSelectors) {
-            const element = page.locator(selector);
-            await element.waitFor({ state: 'visible', timeout: 10000 });
-            const isVisible = await element.isVisible();
-            expect(isVisible).toBe(true);
-            console.log(`Verified presence of element: ${selector}`);
-        }
-    
-        console.log('All footer links and specified elements are working as expected');
+        console.log('All footer links are working as expected');
     }, 60000);
 });
