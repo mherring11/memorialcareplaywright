@@ -51,7 +51,7 @@ test.describe('MemorialCare Website Header Test', () => {
 
     test('Verify that the footer is visible and all links are working', async ({ page }) => {
     
-        test.setTimeout(60000);
+        test.setTimeout(90000);
         const url = 'https://www.memorialcare.org';
         await page.goto(url);
         console.log('Navigated to MemorialCare website');
