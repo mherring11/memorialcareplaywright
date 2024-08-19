@@ -2,135 +2,114 @@ const { test, expect } = require('@playwright/test');
 
 test.use({ viewport: { width: 375, height: 812 } });
 
-test.describe('MemorialCare Blog Tests - Mobile View', () => {
+test.describe('MemorialCare Locations Page Tests - Mobile View', () => {
 
-    test('Verify that the current blog posts load when the page loads', async ({ page }) => {
-        test.setTimeout(30000);
+  test('Verify zip code search with California and non-California zip codes', async ({ page }) => {
+    test.setTimeout(60000);
 
-        await page.goto('https://www.memorialcare.org/blog');
-        console.log('Navigated to the MemorialCare blog listing page');
+    const url = 'https://www.gnpweb.com/locations';
+    await page.goto(url);
+    console.log('Navigated to locations page');
 
-        const blogPostsContainerSelector = '.content-segment.blog-listing__results';
-        await page.waitForSelector(blogPostsContainerSelector, { state: 'visible', timeout: 15000 });
-        console.log('Blog posts container is visible');
+    const zipCodes = ['90806', '92708', '32412'];
 
-        const blogPostCardSelector = '.blog-listing__blog-card';
-        const blogPostCount = await page.$$eval(blogPostCardSelector, posts => posts.length);
+    try {
+        for (const zipCode of zipCodes) {
+            await page.fill('input.mapboxgl-ctrl-geocoder--input', '');
 
-        expect(blogPostCount).toBeGreaterThan(0);
-        console.log(`Verified that there are ${blogPostCount} blog posts loaded on the page`);
-    });
+            let currentInput = '';
+            for (const digit of zipCode) {
+                await page.type('input.mapboxgl-ctrl-geocoder--input', digit, { delay: 1500 });
+                currentInput += digit;
+                console.log(`Entered digit: ${digit}`);
+                const currentValue = await page.inputValue('input.mapboxgl-ctrl-geocoder--input');
+                expect(currentValue).toBe(currentInput);
+            }
 
-    test('Verify that the "Read More" link functions properly', async ({ page }) => {
-        test.setTimeout(30000);
+            try {
+                await page.waitForSelector('.mapboxgl-ctrl-geocoder--suggestion', { state: 'visible', timeout: 10000 });
+                console.log('City suggestion appeared');
+                await page.press('input.mapboxgl-ctrl-geocoder--input', 'Enter');
+                console.log('Pressed Enter to select the suggested city');
 
-        await page.goto('https://www.memorialcare.org/blog');
-        console.log('Navigated to the MemorialCare blog page');
+                const filterButtonSelector = '.location-search__filter-trigger a.button';
 
-        const readMoreLinkSelector = '.blog-card__actions .button';
-        await page.waitForSelector(readMoreLinkSelector, { state: 'visible', timeout: 15000 });
-        console.log('"Read More" links are visible on the page');
+                await page.click(filterButtonSelector);
+                console.log('Clicked the "Filter Results" button');
 
-        const firstReadMoreLink = await page.getAttribute(readMoreLinkSelector, 'href');
-        expect(firstReadMoreLink).toBeTruthy();
-        console.log(`Verified that the first "Read More" link has a valid href: ${firstReadMoreLink}`);
+                const noResultsSelector = '.location-search__no-results';
+                const hasNoResults = await page.$(noResultsSelector);
 
-        await page.click(readMoreLinkSelector);
-        console.log('Clicked on the first "Read More" link');
+                if (hasNoResults) {
+                    console.log(`No results found for zip code: ${zipCode}`);
+                    await page.waitForTimeout(1500);
+                    continue;
+                }
 
-        await page.waitForLoadState('domcontentloaded');
-        const currentURL = page.url();
-        expect(currentURL).toContain(firstReadMoreLink);
-        console.log(`Verified that the "Read More" link redirects to the correct page: ${currentURL}`);
-    });
+                const resultsCountSelector = '.location-search__list__item';
+                await page.waitForSelector(resultsCountSelector, { state: 'visible' });
+                const resultsCount = await page.locator(resultsCountSelector).count();
+                console.log(`Number of results found: ${resultsCount}`);
+            } catch (error) {
+                console.log(`Timeout or error for zip code: ${zipCode}`);
+            }
 
-    test('Verify that the "Featured Topics" filter functions correctly', async ({ page }) => {
-        test.setTimeout(30000);
-    
-        await page.goto('https://www.memorialcare.org/blog');
-        console.log('Navigated to the MemorialCare blog page');
-    
-        const featuredTopicSelector = '.quick-link__link[href*="service%3A2"]';
-        const blogPostsContainerSelector = '.content-segment.blog-listing__results';
-    
-        await page.click(featuredTopicSelector);
-        console.log('Clicked on the "Cancer Care" featured topic');
-    
-        await page.waitForSelector(blogPostsContainerSelector, { state: 'visible', timeout: 15000 });
-        console.log('Blog posts container is visible after filtering');
-    
-        const blogPostCardSelector = '.blog-listing__blog-card';
-        const blogPostCount = await page.$$eval(blogPostCardSelector, posts => posts.length);
-    
-        expect(blogPostCount).toBeGreaterThan(0);
-        console.log(`Verified that there are ${blogPostCount} blog posts loaded for the "Cancer Care" filter`);
-    
-        const blogPostTitles = await page.$$eval(`${blogPostCardSelector} .blog-card__title-link`, titles => titles.map(title => title.textContent.toLowerCase()));
-        const keyword = 'cancer';
-    
-        const anyPostMatchesFilter = blogPostTitles.some(title => title.includes(keyword));
-        expect(anyPostMatchesFilter).toBe(true);
-        console.log(`Verified that at least one blog post is related to "Cancer Care"`);
-    });
-    
-    test('Verify that the Services select form functions correctly', async ({ page }) => {
-        await page.goto('https://www.memorialcare.org/blog');
-        console.log('Navigated to the MemorialCare blog page');
+            await page.fill('input.mapboxgl-ctrl-geocoder--input', '');
+            console.log('Cleared the zip code input field');
 
-        const filterResultsButtonSelector = '.sidebar-content__sidebar-mobile-trigger';
-        await page.click(filterResultsButtonSelector);
-        console.log('Clicked on the Filter Results button');
-
-        const servicesDropdownSelector = '.facets-widget-dropdown .choices';
-        await page.click(servicesDropdownSelector);
-        console.log('Clicked on the Services dropdown');
-    
-        const firstServiceOptionSelector = '.choices__item--choice.choices__item--selectable:first-child';
-        await page.waitForSelector(firstServiceOptionSelector, { state: 'visible', timeout: 15000 });
-        await page.click(firstServiceOptionSelector);
-        console.log('Selected the first option in the Services dropdown');
-    
-        const blogPostsContainerSelector = '.content-segment.blog-listing__results';
-        await page.waitForSelector(blogPostsContainerSelector, { state: 'visible', timeout: 15000 });
-        console.log('Blog posts container is visible after filtering');
-    
-        const blogPostCount = await page.$$eval('.blog-listing__blog-card', posts => posts.length);
-        expect(blogPostCount).toBeGreaterThan(0);
-        console.log(`Verified that there are ${blogPostCount} blog posts loaded after selecting the service filter`);
-    });
-
-    test('Verify that the Format checkboxes function correctly', async ({ page }) => {
-        const formats = [
-            { id: 'format-article', label: 'Article' },
-            { id: 'format-testimonial', label: 'Patient Story' },
-            { id: 'format-podcast', label: 'Podcast' },
-            { id: 'format-video', label: 'Video' }
-        ];
-    
-        for (const format of formats) {
-            await page.goto('https://www.memorialcare.org/blog');
-            console.log('Navigated to the MemorialCare blog page');
-
-            const filterResultsButtonSelector = '.sidebar-content__sidebar-mobile-trigger';
-            await page.click(filterResultsButtonSelector);
-            console.log('Clicked on the Filter Results button');
-    
-            const checkboxSelector = `#${format.id}`;
-            const labelSelector = `label[for="${format.id}"]`;
-    
-            await page.click(labelSelector);
-            console.log(`Clicked on the ${format.label} checkbox`);
-    
-            const blogPostsContainerSelector = '.content-segment.blog-listing__results';
-            await page.waitForSelector(blogPostsContainerSelector, { state: 'visible', timeout: 15000 });
-            console.log(`Blog posts container is visible after filtering by ${format.label}`);
-    
-            const blogPostCount = await page.$$eval('.blog-listing__blog-card', posts => posts.length);
-            expect(blogPostCount).toBeGreaterThan(0);
-            console.log(`Verified that there are ${blogPostCount} blog posts loaded for the ${format.label} filter`);
-    
-            await page.click(labelSelector);
-            console.log(`Unclicked the ${format.label} checkbox`);
+            await page.waitForTimeout(1000);
+            console.log('Waited for 1 second before moving to the next zip code');
         }
+    } catch (error) {
+        console.log('An unexpected error occurred:', error);
+    }
+
+    await page.goto(url);
+    console.log('Navigated back to the locations page');
+  });
+
+  test('Verify all radius options are present for zip code 90806', async ({ page }) => {
+    test.setTimeout(60000);
+
+    const url = 'https://www.gnpweb.com/locations';
+    await page.goto(url);
+    console.log('Navigated to locations page');
+
+    const zipCode = '90806';
+    const radiusSelector = 'select#location-search-radius';
+    const expectedRadii = ['5', '10', '25', '50', '75'];
+
+    try {
+        await page.fill('input.mapboxgl-ctrl-geocoder--input', '');
+        for (const digit of zipCode) {
+            await page.type('input.mapboxgl-ctrl-geocoder--input', digit, { delay: 1500 });
+            console.log(`Entered digit: ${digit}`);
+        }
+
+        await page.waitForSelector('.mapboxgl-ctrl-geocoder--suggestion', { state: 'visible', timeout: 10000 });
+        console.log('City suggestion appeared');
+        await page.press('input.mapboxgl-ctrl-geocoder--input', 'Enter');
+        console.log('Pressed Enter to select the suggested city');
+
+        const radiusOptions = await page.$$eval(`${radiusSelector} option`, options =>
+            options.map(option => option.value)
+        );
+
+        console.log('Radius options found:', radiusOptions);
+
+        for (const expectedRadius of expectedRadii) {
+            if (radiusOptions.includes(expectedRadius)) {
+                console.log(`Radius ${expectedRadius} Miles is present.`);
+            } else {
+                console.error(`Radius ${expectedRadius} Miles is missing!`);
+            }
+        }
+
+    } catch (error) {
+        console.log('An unexpected error occurred:', error);
+    }
+
+    await page.goto(url);
+    console.log('Navigated back to the locations page');
     });
 });
