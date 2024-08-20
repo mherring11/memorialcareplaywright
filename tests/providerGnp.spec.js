@@ -9,10 +9,15 @@ test.describe('GNP Provider Tests', () => {
 
     const providerNameSelector = 'input[data-drupal-selector="edit-search-api-fulltext"]';
     const resultsCountSelector = '.find-a-provider__header--count .provider-search__resultcount';
-    const providerCardsSelector = '.find-a-provider__provider-card';
+    const providerCardsSelector = '.find-a-provider__provider-card .provider-card-search__name'; // Adjusted selector
     const expectedProviderText = 'pak';
+    
+    await page.waitForSelector(providerNameSelector, { state: 'visible', timeout: 60000 });
+    console.log('Doctor/Provider Name input field is visible');
+
     await page.fill(providerNameSelector, expectedProviderText);
     console.log(`Filled Doctor/Provider Name with "${expectedProviderText}"`);
+
     await page.press(providerNameSelector, 'Enter');
     console.log('Pressed Enter to submit the search');
 
@@ -26,7 +31,7 @@ test.describe('GNP Provider Tests', () => {
         if (!match) return false;
         const currentCount = parseInt(match[1], 10);
         return currentCount !== initialCount;
-    }, resultsCountSelector, 4679); 
+    }, resultsCountSelector, 4679);
 
     console.log('Provider records loaded');
 
@@ -61,7 +66,8 @@ test.describe('GNP Provider Tests', () => {
     const providerCardsAfterClear = await page.locator(providerCardsSelector).all();
     expect(providerCardsAfterClear.length).toBe(numberOfResultsAfterClear);
     console.log('Verified number of provider cards matches the results count after clearing the field');
-  });
+});
+
 
   test('Filter by Online Scheduling', async ({ page }) => {
     await page.goto(url);

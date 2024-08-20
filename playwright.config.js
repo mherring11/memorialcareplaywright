@@ -1,4 +1,3 @@
-// playwright.config.js
 const { devices } = require('@playwright/test');
 
 module.exports = {
@@ -7,7 +6,7 @@ module.exports = {
     headless: false,
     viewport: { width: 1280, height: 720 },
     ignoreHTTPSErrors: true,
-    video: 'retain-on-failure',
+    video: 'off',
   },
   projects: [
     {
@@ -18,14 +17,17 @@ module.exports = {
       name: 'Desktop Safari',
       use: { browserName: 'webkit' },
     },
-    {
-      name: 'Mobile Safari',
-      use: devices['iPhone 11'],
-    },
-    {
-      name: 'Mobile Chrome',
-      use: devices['Pixel 4'],
-    },
+    // {
+    //   name: 'Mobile Safari',
+    //   use: devices['iPhone 11'],
+    // },
+    // {
+    //   name: 'Mobile Chrome',
+    //   use: devices['Pixel 4'],
+    // },
   ],
-
+  reporter: [
+    ['json', { outputFile: 'results/report.json' }],
+    ['html', { outputFolder: 'results/', open: 'never' }]
+  ]
 };
