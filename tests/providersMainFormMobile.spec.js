@@ -44,17 +44,19 @@ test.describe('MemorialCare Provider Tests', () => {
   });
     
   test('Filter by Doctor/Provider Name', async ({ page }) => {
+    const url = 'https://www.memorialcare.org/providers';
     await page.goto(url);
     console.log('Navigated to providers page');
 
-    const filterResultsButtonSelector = '.sidebar-content__sidebar-mobile-trigger';
-    await page.click(filterResultsButtonSelector);
-    console.log('Clicked Filter Results button');
+    const filterResultsSelector = '.sidebar-content__sidebar-mobile-trigger';
+    await page.waitForSelector(filterResultsSelector, { state: 'visible' });
+    await page.click(filterResultsSelector);
+    console.log('Clicked on "Filter Results" button');
 
     const providerNameSelector = 'input[data-drupal-selector="edit-search-api-fulltext"]';
     const resultsCountSelector = '.find-a-provider__header--count .provider-search__resultcount';
     const providerCardsSelector = '.find-a-provider__provider-card';
-    const expectedProviderText = 'pak'; 
+    const expectedProviderText = 'pak';
 
     await page.fill(providerNameSelector, expectedProviderText);
     console.log(`Filled Doctor/Provider Name with "${expectedProviderText}"`);
@@ -64,14 +66,14 @@ test.describe('MemorialCare Provider Tests', () => {
     await page.waitForLoadState('networkidle');
 
     await page.waitForFunction((selector, initialCount) => {
-      const element = document.querySelector(selector);
-      if (!element) return false;
-      const text = element.textContent || '';
-      const match = text.match(/(\d+) results/);
-      if (!match) return false;
-      const currentCount = parseInt(match[1], 10);
-      return currentCount !== initialCount;
-    }, resultsCountSelector, 4679); 
+        const element = document.querySelector(selector);
+        if (!element) return false;
+        const text = element.textContent || '';
+        const match = text.match(/(\d+) results/);
+        if (!match) return false;
+        const currentCount = parseInt(match[1], 10);
+        return currentCount !== initialCount;
+    }, resultsCountSelector, 4679);
 
     console.log('Provider records loaded');
 
@@ -89,7 +91,24 @@ test.describe('MemorialCare Provider Tests', () => {
 
     await page.fill(providerNameSelector, '');
     console.log('Cleared Doctor/Provider Name field');
-  });
+
+    await page.press(providerNameSelector, 'Enter');
+    console.log('Pressed Enter to submit the search after clearing the field');
+
+    await page.waitForLoadState('networkidle');
+
+    const resultsTextAfterClear = await page.textContent(resultsCountSelector);
+    console.log(`Results count text after clearing the Doctor/Provider Name field: ${resultsTextAfterClear}`);
+
+    const resultsMatchAfterClear = resultsTextAfterClear.match(/(\d+) results/);
+    const numberOfResultsAfterClear = resultsMatchAfterClear ? parseInt(resultsMatchAfterClear[1], 10) : 0;
+    console.log(`Number of provider records found after clearing the field: ${numberOfResultsAfterClear}`);
+    expect(numberOfResultsAfterClear).toBeGreaterThan(0);
+
+    const providerCardsAfterClear = await page.locator(providerCardsSelector).all();
+    expect(providerCardsAfterClear.length).toBe(numberOfResultsAfterClear);
+    console.log('Verified number of provider cards matches the results count after clearing the field');
+});
 
   test('Filter by Location or Zip Code', async ({ page }) => {
     const url = 'https://www.memorialcare.org/providers';

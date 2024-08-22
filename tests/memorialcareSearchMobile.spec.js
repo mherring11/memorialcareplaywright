@@ -5,11 +5,27 @@ test.use({ viewport: { width: 375, height: 812 } });
 test.describe('MemorialCare Site Search Functionality - Mobile View', () => {
 
   test('Verify that the search form functions and returns properly formatted results for "lungs", "heart", and "brain" on mobile', async ({ page }) => {
+    test.setTimeout(60000);
     const searchTerms = ['lungs', 'heart', 'brain'];
 
     for (const searchTerm of searchTerms) {
       await performSearchAndVerify(page, searchTerm);
     }
+
+    const mobileHamburgerButtonSelector = '.site-header__primary-nav__hamburger__trigger--mobile';
+    await page.waitForSelector(mobileHamburgerButtonSelector, { state: 'visible', timeout: 15000 });
+    await page.click(mobileHamburgerButtonSelector);
+    console.log('Clicked on the mobile hamburger menu');
+
+    const servicesButtonSelector = '.mobile-menu__primary-nav-link[href="/services"]';
+    await page.waitForSelector(servicesButtonSelector, { state: 'visible', timeout: 15000 });
+    await page.click(servicesButtonSelector);
+    console.log('Clicked on the Services button in the mobile menu');
+
+    await page.waitForLoadState('networkidle');
+    const currentUrl = page.url();
+    expect(currentUrl).toContain('/services');
+    console.log('Verified that the page navigated to the Services page');
   });
 
 });

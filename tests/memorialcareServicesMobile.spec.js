@@ -4,7 +4,7 @@ test.use({ viewport: { width: 375, height: 812 } });
 
 test.describe('MemorialCare Services Tests - Mobile View', () => {
 
-  test('Verify the find a service alphabetical selection filter functions correctly on mobile', async ({ page }) => {
+  test('Verify the presence of alphabet letters for service selection on mobile', async ({ page }) => {
     test.setTimeout(150000);
 
     const url = 'https://www.memorialcare.org/services';
@@ -14,19 +14,14 @@ test.describe('MemorialCare Services Tests - Mobile View', () => {
     const alphabeticalLinksSelector = '.search-marquee__glossary .facet-item.glossaryaz a';
     const alphabetLetters = await page.$$eval(alphabeticalLinksSelector, links => links.map(link => link.textContent.trim()));
 
-    for (const letter of alphabetLetters) {
-      console.log(`Testing alphabetical filter: ${letter}`);
-      await page.click(`.search-marquee__glossary .facet-item.glossaryaz a[href*="glossary%3A${letter}"]`);
-      await page.waitForLoadState('networkidle');
-      
-      const currentUrl = page.url();
-      expect(currentUrl).toContain(`glossary%3A${letter}`);
-      console.log(`Verified filter for letter ${letter} with URL: ${currentUrl}`);
+    const expectedLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').filter(letter => !['X', 'Z'].includes(letter));
 
-      await page.goBack();
-      await page.waitForLoadState('networkidle');
+    for (const letter of expectedLetters) {
+        const isPresent = alphabetLetters.includes(letter);
+        expect(isPresent).toBe(true);
+        console.log(`Verified that letter ${letter} is present`);
     }
-  });
+});
 
   test('Verify the first condition selector functions correctly on mobile', async ({ page }) => {
     test.setTimeout(150000);

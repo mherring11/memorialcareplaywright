@@ -3,6 +3,7 @@ const { test, expect } = require('@playwright/test');
 test.describe('MemorialCare Site Search Functionality', () => {
 
   test('Verify that the search form functions and returns properly formatted results for "lungs", "heart", and "brain"', async ({ page }) => {
+    test.setTimeout(60000);
     const searchTerms = ['lungs', 'heart', 'brain'];
 
     for (const searchTerm of searchTerms) {

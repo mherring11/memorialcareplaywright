@@ -35,16 +35,20 @@ test.describe('MemorialCare Provider Tests', () => {
 });
 
 test('Filter by Doctor/Provider Name', async ({ page }) => {
-  const url = 'https://www.memorialcare.org/providers';
   await page.goto(url);
   console.log('Navigated to providers page');
 
   const providerNameSelector = 'input[data-drupal-selector="edit-search-api-fulltext"]';
   const resultsCountSelector = '.find-a-provider__header--count .provider-search__resultcount';
-  const providerCardsSelector = '.find-a-provider__provider-card';
-  const expectedProviderText = 'pak'; 
+  const providerCardsSelector = '.find-a-provider__provider-card .provider-card-search__name'; // Adjusted selector
+  const expectedProviderText = 'pak';
+  
+  await page.waitForSelector(providerNameSelector, { state: 'visible', timeout: 60000 });
+  console.log('Doctor/Provider Name input field is visible');
+
   await page.fill(providerNameSelector, expectedProviderText);
   console.log(`Filled Doctor/Provider Name with "${expectedProviderText}"`);
+
   await page.press(providerNameSelector, 'Enter');
   console.log('Pressed Enter to submit the search');
 
@@ -58,7 +62,7 @@ test('Filter by Doctor/Provider Name', async ({ page }) => {
       if (!match) return false;
       const currentCount = parseInt(match[1], 10);
       return currentCount !== initialCount;
-  }, resultsCountSelector, 4679); 
+  }, resultsCountSelector, 4679);
 
   console.log('Provider records loaded');
 
@@ -73,6 +77,26 @@ test('Filter by Doctor/Provider Name', async ({ page }) => {
   const providerCards = await page.locator(providerCardsSelector).all();
   expect(providerCards.length).toBe(numberOfResults);
   console.log('Verified number of provider cards matches the results count');
+
+  await page.fill(providerNameSelector, '');
+  console.log('Cleared Doctor/Provider Name field');
+
+  await page.press(providerNameSelector, 'Enter');
+  console.log('Pressed Enter to submit the search after clearing the field');
+
+  await page.waitForLoadState('networkidle');
+
+  const resultsTextAfterClear = await page.textContent(resultsCountSelector);
+  console.log(`Results count text after clearing the Doctor/Provider Name field: ${resultsTextAfterClear}`);
+
+  const resultsMatchAfterClear = resultsTextAfterClear.match(/(\d+) results/);
+  const numberOfResultsAfterClear = resultsMatchAfterClear ? parseInt(resultsMatchAfterClear[1], 10) : 0;
+  console.log(`Number of provider records found after clearing the field: ${numberOfResultsAfterClear}`);
+  expect(numberOfResultsAfterClear).toBeGreaterThan(0);
+
+  const providerCardsAfterClear = await page.locator(providerCardsSelector).all();
+  expect(providerCardsAfterClear.length).toBe(numberOfResultsAfterClear);
+  console.log('Verified number of provider cards matches the results count after clearing the field');
 });
 
 test('Filter by Location or Zip Code', async ({ page }) => {

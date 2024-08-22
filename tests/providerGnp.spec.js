@@ -68,7 +68,6 @@ test.describe('GNP Provider Tests', () => {
     console.log('Verified number of provider cards matches the results count after clearing the field');
 });
 
-
   test('Filter by Online Scheduling', async ({ page }) => {
     await page.goto(url);
     console.log('Navigated to providers page');

@@ -15,27 +15,23 @@ test.describe('MemorialCare Locations Radius Options Test - Mobile View', () => 
         const expectedRadii = ['5', '10', '25', '50', '75'];
 
         try {
-            // Enter the zip code
             await page.fill('input.mapboxgl-ctrl-geocoder--input', '');
             for (const digit of zipCode) {
                 await page.type('input.mapboxgl-ctrl-geocoder--input', digit, { delay: 150 });
                 console.log(`Entered digit: ${digit}`);
             }
 
-            // Wait for the city suggestion to appear and press Enter
             await page.waitForSelector('.mapboxgl-ctrl-geocoder--suggestion', { state: 'visible', timeout: 10000 });
             console.log('City suggestion appeared');
             await page.press('input.mapboxgl-ctrl-geocoder--input', 'Enter');
             console.log('Pressed Enter to select the suggested city');
 
-            // Get all radius options from the dropdown
             const radiusOptions = await page.$$eval(`${radiusSelector} option`, options =>
                 options.map(option => option.value)
             );
 
             console.log('Radius options found:', radiusOptions);
 
-            // Verify that all expected radius options are present
             for (const expectedRadius of expectedRadii) {
                 if (radiusOptions.includes(expectedRadius)) {
                     console.log(`Radius ${expectedRadius} Miles is present.`);
