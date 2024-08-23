@@ -2,7 +2,7 @@ const { chromium } = require('playwright');
 const path = require('path');
 const fs = require('fs');
 
-const testFileName = 'gnpHeaderFooter.spec.js';  
+const testFileName = process.argv[2];  
 
 (async () => {
     const browser = await chromium.launch();
@@ -16,7 +16,7 @@ const testFileName = 'gnpHeaderFooter.spec.js';
     await page.waitForLoadState('networkidle');
     console.log('Page fully loaded');
 
-    const screenshotName = `${path.basename(testFileName, '.js')}-spec-report.png`;
+    const screenshotName = `${path.basename(testFileName, '.spec.js')}-spec-report.png`;
     const screenshotPath = path.join(__dirname, 'results', 'testResultsScreenshot', screenshotName);
 
     if (!fs.existsSync(path.dirname(screenshotPath))) {
