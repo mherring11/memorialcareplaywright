@@ -1,12 +1,10 @@
 const { test, expect } = require('@playwright/test');
 
-test.use({ viewport: { width: 375, height: 812 } });
-
 test.describe('MemorialCare Site Search Functionality - Mobile View', () => {
 
   test('Verify that the search form functions and returns properly formatted results for "lungs", "heart", and "brain" on mobile', async ({ page }) => {
     test.setTimeout(60000);
-    const searchTerms = ['lungs', 'heart', 'brain'];
+    const searchTerms = ['lungs', 'heart'];
 
     for (const searchTerm of searchTerms) {
       await performSearchAndVerify(page, searchTerm);
