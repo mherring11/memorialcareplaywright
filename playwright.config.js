@@ -9,26 +9,26 @@ module.exports = {
     video: 'off',
   },
   projects: [
-    // {
-    //   name: 'Desktop Chrome',
-    //   use: { browserName: 'chromium' },
-    // },
-    // {
-    //   name: 'Desktop Safari',
-    //   use: { browserName: 'webkit' },
-    // },
-    // {
-    //   name: 'Desktop Firefox',
-    //   use: { browserName: 'firefox' },
-    // },
     {
-      name: 'Mobile Safari',
-      use: devices['iPhone 12'],
+      name: 'Desktop Chrome',
+      use: { browserName: 'chromium' },
     },
     {
-      name: 'Mobile Chrome',
-      use: devices['Pixel 4'],
+      name: 'Desktop Safari',
+      use: { browserName: 'webkit' },
     },
+    {
+      name: 'Desktop Firefox',
+      use: { browserName: 'firefox' },
+    },
+    // {
+    //   name: 'Mobile Safari',
+    //   use: devices['iPhone 12'],
+    // },
+    // {
+    //   name: 'Mobile Chrome',
+    //   use: devices['Pixel 4'],
+    // },
   ],
   reporter: [
     ['json', { outputFile: 'results/desktop-report.json' }],

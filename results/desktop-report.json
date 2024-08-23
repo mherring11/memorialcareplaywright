@@ -40,8 +40,8 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {},
-        "id": "Mobile Safari",
-        "name": "Mobile Safari",
+        "id": "Desktop Chrome",
+        "name": "Desktop Chrome",
         "testDir": "/Users/mherring/projects/memorial",
         "testIgnore": [],
         "testMatch": [
@@ -54,8 +54,22 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {},
-        "id": "Mobile Chrome",
-        "name": "Mobile Chrome",
+        "id": "Desktop Safari",
+        "name": "Desktop Safari",
+        "testDir": "/Users/mherring/projects/memorial",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/mherring/projects/memorial/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "Desktop Firefox",
+        "name": "Desktop Firefox",
         "testDir": "/Users/mherring/projects/memorial",
         "testIgnore": [],
         "testMatch": [
@@ -72,20 +86,128 @@
   },
   "suites": [
     {
-      "title": "tests/memorialcareEventsMobile.spec.js",
-      "file": "tests/memorialcareEventsMobile.spec.js",
+      "title": "tests/gnpHeaderFooter.spec.js",
+      "file": "tests/gnpHeaderFooter.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "MemorialCare Events Page Mobile Test",
-          "file": "tests/memorialcareEventsMobile.spec.js",
-          "line": 5,
+          "title": "GNP Website Header and Footer Tests",
+          "file": "tests/gnpHeaderFooter.spec.js",
+          "line": 3,
           "column": 6,
           "specs": [
             {
-              "title": "Verify that the current events load when the page loads on mobile",
+              "title": "Verify that the header is visible and all links are working",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Chrome",
+                  "projectName": "Desktop Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "status": "passed",
+                      "duration": 44191,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to GNP website\n"
+                        },
+                        {
+                          "text": "Header is visible on the page\n"
+                        },
+                        {
+                          "text": "Verified that the header is loaded and visible\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/about-us\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://www.gnpweb.com/about-us\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/contact-us\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://www.gnpweb.com/contact-us\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/health-resources\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://www.gnpweb.com/health-resources\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"https://physicians.gnpweb.com\"]\n"
+                        },
+                        {
+                          "text": "Verified that external link opens in a new tab: https://physicians.gnpweb.com\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/become-patient\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://www.gnpweb.com/become-patient\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/locations\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://www.gnpweb.com/locations\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/gnp-events\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://www.gnpweb.com/gnp-events\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/about-us/member-resources\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://www.gnpweb.com/about-us/member-resources\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/press-room\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://www.gnpweb.com/press-room\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/long-beach\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://www.gnpweb.com/long-beach\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/providers\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://www.gnpweb.com/providers\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-08-23T13:46:37.023Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ad47c3c26b4aa31eec68-a5bf7b2e302c266366a4",
+              "file": "tests/gnpHeaderFooter.spec.js",
+              "line": 5,
+              "column": 3
+            },
+            {
+              "title": "Verify that all footer links are present",
               "ok": true,
               "tags": [],
               "tests": [
@@ -93,443 +215,53 @@
                   "timeout": 30000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "Mobile Safari",
-                  "projectName": "Mobile Safari",
+                  "projectId": "Desktop Chrome",
+                  "projectName": "Desktop Chrome",
                   "results": [
                     {
-                      "workerIndex": 36,
+                      "workerIndex": 1,
                       "status": "passed",
-                      "duration": 6119,
+                      "duration": 696,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Clicked on the hamburger button to open the mobile menu\n"
+                          "text": "Navigated to GNP website\n"
                         },
                         {
-                          "text": "Clicked on the Events button in the mobile menu\n"
+                          "text": "Footer is visible on the page\n"
                         },
                         {
-                          "text": "Verified that 10 event(s) are loaded on the page.\n"
+                          "text": "Verified existence of footer link: a[href=\"https://careers.memorialcare.org/\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"/contact-us\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"https://www.memorialcare.org\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"https://physicians.gnpweb.com\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"/policies-legal-notices/privacy-policy\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"/policies-legal-notices/terms-use\"]\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-08-22T15:43:53.962Z",
+                      "startTime": "2024-08-23T13:47:22.974Z",
                       "attachments": []
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "03c86bedec7fd5afb64a-a45364cfe6f420febee1",
-              "file": "tests/memorialcareEventsMobile.spec.js",
-              "line": 45,
-              "column": 5
-            },
-            {
-              "title": "Verify that the \"Learn More\" link on the first two event cards functions properly on mobile",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Mobile Safari",
-                  "projectName": "Mobile Safari",
-                  "results": [
-                    {
-                      "workerIndex": 36,
-                      "status": "passed",
-                      "duration": 3744,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "Clicked on the hamburger button to open the mobile menu\n"
-                        },
-                        {
-                          "text": "Clicked on the Events button in the mobile menu\n"
-                        },
-                        {
-                          "text": "Clicked on the first \"Learn More\" link\n"
-                        },
-                        {
-                          "text": "Verified that the first \"Learn More\" link navigates away from the events page\n"
-                        },
-                        {
-                          "text": "Second \"Learn More\" link is visible\n"
-                        },
-                        {
-                          "text": "Clicked on the second \"Learn More\" link\n"
-                        },
-                        {
-                          "text": "Verified that the second \"Learn More\" link navigates away from the events page\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2024-08-22T15:44:00.201Z",
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "03c86bedec7fd5afb64a-89631380b1bad109904e",
-              "file": "tests/memorialcareEventsMobile.spec.js",
-              "line": 59,
-              "column": 5
-            },
-            {
-              "title": "Verify that the keyword filter functions correctly with the word \"diabetes\" on mobile",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Mobile Safari",
-                  "projectName": "Mobile Safari",
-                  "results": [
-                    {
-                      "workerIndex": 36,
-                      "status": "passed",
-                      "duration": 6909,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "Clicked on the hamburger button to open the mobile menu\n"
-                        },
-                        {
-                          "text": "Clicked on the Events button in the mobile menu\n"
-                        },
-                        {
-                          "text": "Clicked on the Filter Results button on attempt 1\n"
-                        },
-                        {
-                          "text": "Filter Results section is not visible, retrying...\n"
-                        },
-                        {
-                          "text": "Clicked on the Filter Results button on attempt 2\n"
-                        },
-                        {
-                          "text": "Filter Results section is visible after clicking the button.\n"
-                        },
-                        {
-                          "text": "Filter Results section is visible\n"
-                        },
-                        {
-                          "text": "Keyword input field is visible\n"
-                        },
-                        {
-                          "text": "Entered keyword: diabetes\n"
-                        },
-                        {
-                          "text": "Submitted the keyword search\n"
-                        },
-                        {
-                          "text": "Search results are visible\n"
-                        },
-                        {
-                          "text": "Verified that there are 10 results for the keyword \"diabetes\"\n"
-                        },
-                        {
-                          "text": "Event 1: Know Your Medicare Options\n"
-                        },
-                        {
-                          "text": "Event 2: Breastfeeding Support Group\n"
-                        },
-                        {
-                          "text": "Event 3: Cancer Care Support Group\n"
-                        },
-                        {
-                          "text": "Event 4: Women’s General Cancer Care Support Group\n"
-                        },
-                        {
-                          "text": "Event 5: Parkinson's Disease Exercise Class - Steps Forward 9am\n"
-                        },
-                        {
-                          "text": "Event 6: Joint Replacement Pre-Operative Education Class\n"
-                        },
-                        {
-                          "text": "Event 7: Parkinson's Disease Exercise Class - Steps Forward 10am\n"
-                        },
-                        {
-                          "text": "Event 8: Road to Recovery Joint Replacement Pre-Operative Education Class\n"
-                        },
-                        {
-                          "text": "Event 9: Cruising to Recovery Spine Surgery Pre-Operative Seminar\n"
-                        },
-                        {
-                          "text": "Event 10: Surgical Weight Loss Support Group\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2024-08-22T15:44:03.949Z",
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "03c86bedec7fd5afb64a-23775519fff9e0700271",
-              "file": "tests/memorialcareEventsMobile.spec.js",
-              "line": 91,
-              "column": 5
-            },
-            {
-              "title": "Verify that the Event Date min/max inputs are present and visible on mobile",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Mobile Safari",
-                  "projectName": "Mobile Safari",
-                  "results": [
-                    {
-                      "workerIndex": 36,
-                      "status": "passed",
-                      "duration": 8492,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "Clicked on the hamburger button to open the mobile menu\n"
-                        },
-                        {
-                          "text": "Clicked on the Events button in the mobile menu\n"
-                        },
-                        {
-                          "text": "Clicked on the Filter Results button on attempt 1\n"
-                        },
-                        {
-                          "text": "Filter Results section is not visible, retrying...\n"
-                        },
-                        {
-                          "text": "Clicked on the Filter Results button on attempt 2\n"
-                        },
-                        {
-                          "text": "Filter Results section is visible after clicking the button.\n"
-                        },
-                        {
-                          "text": "Filter Results section is visible\n"
-                        },
-                        {
-                          "text": "Min date input visibility: true\n"
-                        },
-                        {
-                          "text": "Verified that the Min date input is present and visible.\n"
-                        },
-                        {
-                          "text": "Max date input visibility: true\n"
-                        },
-                        {
-                          "text": "Verified that the Max date input is present and visible.\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2024-08-22T15:44:10.861Z",
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "03c86bedec7fd5afb64a-c910dcd90add7d24e66a",
-              "file": "tests/memorialcareEventsMobile.spec.js",
-              "line": 129,
-              "column": 5
-            },
-            {
-              "title": "Verify and select the first Service Line option and log the selected value on mobile",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Mobile Safari",
-                  "projectName": "Mobile Safari",
-                  "results": [
-                    {
-                      "workerIndex": 36,
-                      "status": "passed",
-                      "duration": 6717,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "Clicked on the hamburger button to open the mobile menu\n"
-                        },
-                        {
-                          "text": "Clicked on the Events button in the mobile menu\n"
-                        },
-                        {
-                          "text": "Clicked on the Filter Results button on attempt 1\n"
-                        },
-                        {
-                          "text": "Filter Results section is not visible, retrying...\n"
-                        },
-                        {
-                          "text": "Clicked on the Filter Results button on attempt 2\n"
-                        },
-                        {
-                          "text": "Filter Results section is visible after clicking the button.\n"
-                        },
-                        {
-                          "text": "Filter Results section is visible\n"
-                        },
-                        {
-                          "text": "Clicked on the Service Lines dropdown\n"
-                        },
-                        {
-                          "text": "First option in Service Lines is visible\n"
-                        },
-                        {
-                          "text": "First option in Service Lines: Breast Care\n"
-                        },
-                        {
-                          "text": "Selected the first Service Line option: Breast Care\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2024-08-22T15:44:19.357Z",
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "03c86bedec7fd5afb64a-1432c531e6182f504b01",
-              "file": "tests/memorialcareEventsMobile.spec.js",
-              "line": 157,
-              "column": 5
-            },
-            {
-              "title": "Verify the presence of the Service Lines section on the MemorialCare Events page",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 20000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Mobile Safari",
-                  "projectName": "Mobile Safari",
-                  "results": [
-                    {
-                      "workerIndex": 36,
-                      "status": "passed",
-                      "duration": 8130,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "Clicked on the hamburger button to open the mobile menu\n"
-                        },
-                        {
-                          "text": "Clicked on the Events button in the mobile menu\n"
-                        },
-                        {
-                          "text": "Clicked on the Filter Results button on attempt 1\n"
-                        },
-                        {
-                          "text": "Filter Results section is not visible, retrying...\n"
-                        },
-                        {
-                          "text": "Clicked on the Filter Results button on attempt 2\n"
-                        },
-                        {
-                          "text": "Filter Results section is visible after clicking the button.\n"
-                        },
-                        {
-                          "text": "Service Lines section is present and visible.\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2024-08-22T15:44:26.082Z",
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "03c86bedec7fd5afb64a-f4cc7fa7ffef072da2b5",
-              "file": "tests/memorialcareEventsMobile.spec.js",
-              "line": 185,
-              "column": 5
-            },
-            {
-              "title": "Verify and select the first Hosted By option and log the selected value on mobile",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Mobile Safari",
-                  "projectName": "Mobile Safari",
-                  "results": [
-                    {
-                      "workerIndex": 36,
-                      "status": "passed",
-                      "duration": 6844,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "Clicked on the hamburger button to open the mobile menu\n"
-                        },
-                        {
-                          "text": "Clicked on the Events button in the mobile menu\n"
-                        },
-                        {
-                          "text": "Clicked on the Filter Results button on attempt 1\n"
-                        },
-                        {
-                          "text": "Filter Results section is not visible, retrying...\n"
-                        },
-                        {
-                          "text": "Clicked on the Filter Results button on attempt 2\n"
-                        },
-                        {
-                          "text": "Filter Results section is visible after clicking the button.\n"
-                        },
-                        {
-                          "text": "Filter Results section is visible\n"
-                        },
-                        {
-                          "text": "Clicked on the Hosted By dropdown\n"
-                        },
-                        {
-                          "text": "First option in Hosted By is visible\n"
-                        },
-                        {
-                          "text": "First option in Hosted By: MemorialCare\n"
-                        },
-                        {
-                          "text": "Selected the first Hosted By option: MemorialCare\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2024-08-22T15:44:34.215Z",
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "03c86bedec7fd5afb64a-468372ededee6721fc1b",
-              "file": "tests/memorialcareEventsMobile.spec.js",
-              "line": 205,
-              "column": 5
+              "id": "ad47c3c26b4aa31eec68-77c5b905981663f63d79",
+              "file": "tests/gnpHeaderFooter.spec.js",
+              "line": 60,
+              "column": 3
             }
           ]
         }
@@ -538,9 +270,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-08-22T15:43:52.696Z",
-    "duration": 48375.34300000034,
-    "expected": 7,
+    "startTime": "2024-08-23T13:46:35.127Z",
+    "duration": 48560.189999997616,
+    "expected": 2,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
