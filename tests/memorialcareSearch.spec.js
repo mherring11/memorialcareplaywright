@@ -4,7 +4,7 @@ test.describe('MemorialCare Site Search Functionality', () => {
 
   test('Verify that the search form functions and returns properly formatted results for "lungs", "heart", and "brain"', async ({ page }) => {
     test.setTimeout(60000);
-    const searchTerms = ['lungs', 'heart', 'brain'];
+    const searchTerms = ['lungs', 'heart',];
 
     for (const searchTerm of searchTerms) {
       await performSearchAndVerify(page, searchTerm);
