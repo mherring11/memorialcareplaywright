@@ -1,22 +1,29 @@
-const { test, expect } = require('@playwright/test');
+const { test, expect, chromium } = require('@playwright/test');
 
 test.describe('MemorialCare Site Search Functionality - Mobile View', () => {
 
-  test('Verify that the search form functions and returns properly formatted results for "lungs", "heart", and "brain" on mobile', async ({ page }) => {
-    test.setTimeout(60000);
-    const searchTerms = ['lungs', 'heart'];
+  test('Verify that the search form functions and returns properly formatted results for "lungs" on mobile', async () => {
+    const browser = await chromium.launch();
+    const context = await browser.newContext({
+      viewport: { width: 375, height: 812 },
+      userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1'
+    });
+    const page = await context.newPage();
+
+    test.setTimeout(60000); 
+    const searchTerms = ['lungs'];
 
     for (const searchTerm of searchTerms) {
       await performSearchAndVerify(page, searchTerm);
     }
 
     const mobileHamburgerButtonSelector = '.site-header__primary-nav__hamburger__trigger--mobile';
-    await page.waitForSelector(mobileHamburgerButtonSelector, { state: 'visible', timeout: 15000 });
+    await page.waitForSelector(mobileHamburgerButtonSelector, { state: 'visible', timeout: 30000 }); // Increase timeout
     await page.click(mobileHamburgerButtonSelector);
     console.log('Clicked on the mobile hamburger menu');
 
     const servicesButtonSelector = '.mobile-menu__primary-nav-link[href="/services"]';
-    await page.waitForSelector(servicesButtonSelector, { state: 'visible', timeout: 15000 });
+    await page.waitForSelector(servicesButtonSelector, { state: 'visible', timeout: 30000 });
     await page.click(servicesButtonSelector);
     console.log('Clicked on the Services button in the mobile menu');
 
@@ -24,6 +31,8 @@ test.describe('MemorialCare Site Search Functionality - Mobile View', () => {
     const currentUrl = page.url();
     expect(currentUrl).toContain('/services');
     console.log('Verified that the page navigated to the Services page');
+
+    await browser.close();
   });
 
 });

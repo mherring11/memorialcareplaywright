@@ -1,0 +1,249 @@
+{
+  "config": {
+    "configFile": "/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/playwright.config.js",
+    "rootDir": "/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json",
+        {
+          "outputFile": "results/desktop-report.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "results/desktop",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "results/mobile-report.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "results/mobile",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "Mobile Safari",
+        "name": "Mobile Safari",
+        "testDir": "/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "Mobile Chrome",
+        "name": "Mobile Chrome",
+        "testDir": "/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.45.3",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "tests/gnpHeaderFooterMobile.spec.js",
+      "file": "tests/gnpHeaderFooterMobile.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "GNP Website Mobile Header and Footer Tests",
+          "file": "tests/gnpHeaderFooterMobile.spec.js",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Verify that the mobile header is visible and all links are working",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "status": "passed",
+                      "duration": 1654,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to GNP website\n"
+                        },
+                        {
+                          "text": "Hamburger menu clicked\n"
+                        },
+                        {
+                          "text": "Header is visible on the page\n"
+                        },
+                        {
+                          "text": "Verified that the header is loaded and visible\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/about-us\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/contact-us\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/health-resources\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"https://physicians.gnpweb.com\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/become-patient\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/locations\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/gnp-events\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/about-us/member-resources\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/press-room\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/long-beach\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/providers\"]\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-10T18:58:22.330Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "20e55f68fb65d0250dc7-8fd651efa81cba85a450",
+              "file": "tests/gnpHeaderFooterMobile.spec.js",
+              "line": 7,
+              "column": 3
+            },
+            {
+              "title": "Verify that all footer links are present",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "status": "passed",
+                      "duration": 602,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to GNP website\n"
+                        },
+                        {
+                          "text": "Footer is visible on the page\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"https://careers.memorialcare.org/\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"/contact-us\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"https://www.memorialcare.org\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"https://physicians.gnpweb.com\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"/policies-legal-notices/privacy-policy\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"/policies-legal-notices/terms-use\"]\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-10T18:58:24.319Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "20e55f68fb65d0250dc7-d5bfa26b6320a9f66c70",
+              "file": "tests/gnpHeaderFooterMobile.spec.js",
+              "line": 46,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2024-09-10T18:58:21.289Z",
+    "duration": 3669.5279999999984,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
