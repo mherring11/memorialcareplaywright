@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 3
     },
     "preserveOutput": "always",
     "reporter": [
@@ -81,25 +81,25 @@
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.45.3",
-    "workers": 1,
+    "workers": 6,
     "webServer": null
   },
   "suites": [
     {
-      "title": "tests/providerMainFormDesktop.spec.js",
-      "file": "tests/providerMainFormDesktop.spec.js",
+      "title": "tests/gnpLocationsDesktop.spec.js",
+      "file": "tests/gnpLocationsDesktop.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "MemorialCare Provider Tests",
-          "file": "tests/providerMainFormDesktop.spec.js",
-          "line": 5,
+          "title": "GNP Locations Page Tests",
+          "file": "tests/gnpLocationsDesktop.spec.js",
+          "line": 3,
           "column": 6,
           "specs": [
             {
-              "title": "verify Medical Group checkboxes are present",
+              "title": "Verify that the map loads",
               "ok": true,
               "tags": [],
               "tests": [
@@ -111,46 +111,934 @@
                   "projectName": "Desktop Chrome",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 0,
                       "status": "passed",
-                      "duration": 997,
+                      "duration": 3098,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Navigated to providers page\n"
+                          "text": "Navigated to locations page\n"
                         },
                         {
-                          "text": "Verifying presence of checkbox for MemorialCare Medical Group\n"
+                          "text": "Map is visible on the page\n"
                         },
                         {
-                          "text": "Checkbox for MemorialCare Medical Group is visible\n"
-                        },
-                        {
-                          "text": "Verifying presence of checkbox for Greater Newport Physicians MemorialCare\n"
-                        },
-                        {
-                          "text": "Checkbox for Greater Newport Physicians MemorialCare is visible\n"
-                        },
-                        {
-                          "text": "Verifying presence of checkbox for Edinger Medical Group\n"
-                        },
-                        {
-                          "text": "Checkbox for Edinger Medical Group is visible\n"
+                          "text": "Verified that the map is loaded and visible\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-09-12T14:11:04.460Z",
+                      "startTime": "2024-09-17T20:35:54.366Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Safari",
+                  "projectName": "Desktop Safari",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "status": "passed",
+                      "duration": 3993,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Map is visible on the page\n"
+                        },
+                        {
+                          "text": "Verified that the map is loaded and visible\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-17T20:35:54.358Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Firefox",
+                  "projectName": "Desktop Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "status": "passed",
+                      "duration": 3748,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Map is visible on the page\n"
+                        },
+                        {
+                          "text": "Verified that the map is loaded and visible\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-17T20:35:54.362Z",
                       "attachments": []
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "db67f6ffb1e89455e47c-d813d3c5dfa06cb01c32",
-              "file": "tests/providerMainFormDesktop.spec.js",
-              "line": 233,
+              "id": "4b20ded3eea964bbf8ec-0629e43692b5a6652eaa",
+              "file": "tests/gnpLocationsDesktop.spec.js",
+              "line": 5,
               "column": 3
+            },
+            {
+              "title": "Verify zip code search with California and non-California zip codes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Chrome",
+                  "projectName": "Desktop Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 37585,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Entered digit: 9\n"
+                        },
+                        {
+                          "text": "Entered digit: 0\n"
+                        },
+                        {
+                          "text": "Entered digit: 8\n"
+                        },
+                        {
+                          "text": "Entered digit: 0\n"
+                        },
+                        {
+                          "text": "Entered digit: 6\n"
+                        },
+                        {
+                          "text": "City suggestion appeared\n"
+                        },
+                        {
+                          "text": "Pressed Enter to select the suggested city\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button\n"
+                        },
+                        {
+                          "text": "Number of results found: 87\n"
+                        },
+                        {
+                          "text": "Cleared the zip code input field\n"
+                        },
+                        {
+                          "text": "Waited for 1 second before moving to the next zip code\n"
+                        },
+                        {
+                          "text": "Entered digit: 9\n"
+                        },
+                        {
+                          "text": "Entered digit: 2\n"
+                        },
+                        {
+                          "text": "Entered digit: 7\n"
+                        },
+                        {
+                          "text": "Entered digit: 0\n"
+                        },
+                        {
+                          "text": "Entered digit: 8\n"
+                        },
+                        {
+                          "text": "City suggestion appeared\n"
+                        },
+                        {
+                          "text": "Pressed Enter to select the suggested city\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button\n"
+                        },
+                        {
+                          "text": "Number of results found: 111\n"
+                        },
+                        {
+                          "text": "Cleared the zip code input field\n"
+                        },
+                        {
+                          "text": "Waited for 1 second before moving to the next zip code\n"
+                        },
+                        {
+                          "text": "Entered digit: 3\n"
+                        },
+                        {
+                          "text": "Entered digit: 2\n"
+                        },
+                        {
+                          "text": "Entered digit: 4\n"
+                        },
+                        {
+                          "text": "Entered digit: 1\n"
+                        },
+                        {
+                          "text": "Entered digit: 2\n"
+                        },
+                        {
+                          "text": "City suggestion appeared\n"
+                        },
+                        {
+                          "text": "Pressed Enter to select the suggested city\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button\n"
+                        },
+                        {
+                          "text": "No results found for zip code: 32412\n"
+                        },
+                        {
+                          "text": "Navigated back to the locations page\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-17T20:36:00.332Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Safari",
+                  "projectName": "Desktop Safari",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "status": "passed",
+                      "duration": 6368,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Entered digit: 9\n"
+                        },
+                        {
+                          "text": "Entered digit: 0\n"
+                        },
+                        {
+                          "text": "An unexpected error occurred: ExpectError: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"\u001b[7m9\u001b[27m0\"\u001b[39m\nReceived: \u001b[31m\"0\u001b[7m9\u001b[27m\"\u001b[39m\n    at \u001b[90m/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/\u001b[39mtests/gnpLocationsDesktop.spec.js:39:38 {\n  matcherResult: {\n    actual: \u001b[32m'09'\u001b[39m,\n    expected: \u001b[32m'90'\u001b[39m,\n    message: \u001b[32m'\\x1B[2mexpect(\\x1B[22m\\x1B[31mreceived\\x1B[39m\\x1B[2m).\\x1B[22mtoBe\\x1B[2m(\\x1B[22m\\x1B[32mexpected\\x1B[39m\\x1B[2m) // Object.is equality\\x1B[22m\\n'\u001b[39m +\n      \u001b[32m'\\n'\u001b[39m +\n      \u001b[32m'Expected: \\x1B[32m\"\\x1B[7m9\\x1B[27m0\"\\x1B[39m\\n'\u001b[39m +\n      \u001b[32m'Received: \\x1B[31m\"0\\x1B[7m9\\x1B[27m\"\\x1B[39m'\u001b[39m,\n    name: \u001b[32m'toBe'\u001b[39m,\n    pass: \u001b[33mfalse\u001b[39m\n  },\n  [\u001b[32mSymbol(step)\u001b[39m]: {\n    stepId: \u001b[32m'expect@13'\u001b[39m,\n    category: \u001b[32m'expect'\u001b[39m,\n    title: \u001b[32m'expect.toBe'\u001b[39m,\n    params: { expected: \u001b[32m'90'\u001b[39m },\n    infectParentStepsWithError: \u001b[90mundefined\u001b[39m,\n    boxedStack: \u001b[90mundefined\u001b[39m,\n    location: {\n      file: \u001b[32m'/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js'\u001b[39m,\n      line: \u001b[33m39\u001b[39m,\n      column: \u001b[33m38\u001b[39m,\n      function: \u001b[90mundefined\u001b[39m\n    },\n    steps: [],\n    complete: \u001b[36m[Function: complete]\u001b[39m,\n    endWallTime: \u001b[33m1726605365279\u001b[39m,\n    error: {\n      message: \u001b[32m'Error: \\x1B[2mexpect(\\x1B[22m\\x1B[31mreceived\\x1B[39m\\x1B[2m).\\x1B[22mtoBe\\x1B[2m(\\x1B[22m\\x1B[32mexpected\\x1B[39m\\x1B[2m) // Object.is equality\\x1B[22m\\n'\u001b[39m +\n        \u001b[32m'\\n'\u001b[39m +\n        \u001b[32m'Expected: \\x1B[32m\"\\x1B[7m9\\x1B[27m0\"\\x1B[39m\\n'\u001b[39m +\n        \u001b[32m'Received: \\x1B[31m\"0\\x1B[7m9\\x1B[27m\"\\x1B[39m'\u001b[39m,\n      stack: \u001b[32m'Error: \\x1B[2mexpect(\\x1B[22m\\x1B[31mreceived\\x1B[39m\\x1B[2m).\\x1B[22mtoBe\\x1B[2m(\\x1B[22m\\x1B[32mexpected\\x1B[39m\\x1B[2m) // Object.is equality\\x1B[22m\\n'\u001b[39m +\n        \u001b[32m'\\n'\u001b[39m +\n        \u001b[32m'Expected: \\x1B[32m\"\\x1B[7m9\\x1B[27m0\"\\x1B[39m\\n'\u001b[39m +\n        \u001b[32m'Received: \\x1B[31m\"0\\x1B[7m9\\x1B[27m\"\\x1B[39m\\n'\u001b[39m +\n        \u001b[32m'    at /Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js:39:38'\u001b[39m\n    }\n  }\n}\n"
+                        },
+                        {
+                          "text": "Navigated back to the locations page\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-17T20:35:59.487Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Firefox",
+                  "projectName": "Desktop Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "status": "passed",
+                      "duration": 6354,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Entered digit: 9\n"
+                        },
+                        {
+                          "text": "Entered digit: 0\n"
+                        },
+                        {
+                          "text": "An unexpected error occurred: ExpectError: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"\u001b[7m9\u001b[27m0\"\u001b[39m\nReceived: \u001b[31m\"0\u001b[7m9\u001b[27m\"\u001b[39m\n    at \u001b[90m/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/\u001b[39mtests/gnpLocationsDesktop.spec.js:39:38 {\n  matcherResult: {\n    actual: \u001b[32m'09'\u001b[39m,\n    expected: \u001b[32m'90'\u001b[39m,\n    message: \u001b[32m'\\x1B[2mexpect(\\x1B[22m\\x1B[31mreceived\\x1B[39m\\x1B[2m).\\x1B[22mtoBe\\x1B[2m(\\x1B[22m\\x1B[32mexpected\\x1B[39m\\x1B[2m) // Object.is equality\\x1B[22m\\n'\u001b[39m +\n      \u001b[32m'\\n'\u001b[39m +\n      \u001b[32m'Expected: \\x1B[32m\"\\x1B[7m9\\x1B[27m0\"\\x1B[39m\\n'\u001b[39m +\n      \u001b[32m'Received: \\x1B[31m\"0\\x1B[7m9\\x1B[27m\"\\x1B[39m'\u001b[39m,\n    name: \u001b[32m'toBe'\u001b[39m,\n    pass: \u001b[33mfalse\u001b[39m\n  },\n  [\u001b[32mSymbol(step)\u001b[39m]: {\n    stepId: \u001b[32m'expect@13'\u001b[39m,\n    category: \u001b[32m'expect'\u001b[39m,\n    title: \u001b[32m'expect.toBe'\u001b[39m,\n    params: { expected: \u001b[32m'90'\u001b[39m },\n    infectParentStepsWithError: \u001b[90mundefined\u001b[39m,\n    boxedStack: \u001b[90mundefined\u001b[39m,\n    location: {\n      file: \u001b[32m'/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js'\u001b[39m,\n      line: \u001b[33m39\u001b[39m,\n      column: \u001b[33m38\u001b[39m,\n      function: \u001b[90mundefined\u001b[39m\n    },\n    steps: [],\n    complete: \u001b[36m[Function: complete]\u001b[39m,\n    endWallTime: \u001b[33m1726605374570\u001b[39m,\n    error: {\n      message: \u001b[32m'Error: \\x1B[2mexpect(\\x1B[22m\\x1B[31mreceived\\x1B[39m\\x1B[2m).\\x1B[22mtoBe\\x1B[2m(\\x1B[22m\\x1B[32mexpected\\x1B[39m\\x1B[2m) // Object.is equality\\x1B[22m\\n'\u001b[39m +\n        \u001b[32m'\\n'\u001b[39m +\n        \u001b[32m'Expected: \\x1B[32m\"\\x1B[7m9\\x1B[27m0\"\\x1B[39m\\n'\u001b[39m +\n        \u001b[32m'Received: \\x1B[31m\"0\\x1B[7m9\\x1B[27m\"\\x1B[39m'\u001b[39m,\n      stack: \u001b[32m'Error: \\x1B[2mexpect(\\x1B[22m\\x1B[31mreceived\\x1B[39m\\x1B[2m).\\x1B[22mtoBe\\x1B[2m(\\x1B[22m\\x1B[32mexpected\\x1B[39m\\x1B[2m) // Object.is equality\\x1B[22m\\n'\u001b[39m +\n        \u001b[32m'\\n'\u001b[39m +\n        \u001b[32m'Expected: \\x1B[32m\"\\x1B[7m9\\x1B[27m0\"\\x1B[39m\\n'\u001b[39m +\n        \u001b[32m'Received: \\x1B[31m\"0\\x1B[7m9\\x1B[27m\"\\x1B[39m\\n'\u001b[39m +\n        \u001b[32m'    at /Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js:39:38'\u001b[39m\n    }\n  }\n}\n"
+                        },
+                        {
+                          "text": "Navigated back to the locations page\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-17T20:36:09.420Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b20ded3eea964bbf8ec-39f5d69fdce357cbb8cd",
+              "file": "tests/gnpLocationsDesktop.spec.js",
+              "line": 20,
+              "column": 3
+            },
+            {
+              "title": "Verify specific map pin connects to the correct detail record",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Chrome",
+                  "projectName": "Desktop Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 2337,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Map is visible\n"
+                        },
+                        {
+                          "text": "Specific map pin is visible\n"
+                        },
+                        {
+                          "text": "Clicked on the specific map pin to view details\n"
+                        },
+                        {
+                          "text": "Navigated to URL: https://www.gnpweb.com/locations/long-beach-medical-center\n"
+                        },
+                        {
+                          "text": "Verified the correct detail page is displayed\n"
+                        },
+                        {
+                          "text": "Navigated back to the locations page\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-17T20:36:37.922Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Safari",
+                  "projectName": "Desktop Safari",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "status": "passed",
+                      "duration": 5918,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Map is visible\n"
+                        },
+                        {
+                          "text": "Specific map pin is visible\n"
+                        },
+                        {
+                          "text": "Clicked on the specific map pin to view details\n"
+                        },
+                        {
+                          "text": "Navigated to URL: https://www.gnpweb.com/locations/long-beach-medical-center\n"
+                        },
+                        {
+                          "text": "Verified the correct detail page is displayed\n"
+                        },
+                        {
+                          "text": "Navigated back to the locations page\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-17T20:36:05.863Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Firefox",
+                  "projectName": "Desktop Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "status": "passed",
+                      "duration": 7157,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Map is visible\n"
+                        },
+                        {
+                          "text": "Specific map pin is visible\n"
+                        },
+                        {
+                          "text": "Clicked on the specific map pin to view details\n"
+                        },
+                        {
+                          "text": "Navigated to URL: https://www.gnpweb.com/locations/long-beach-medical-center\n"
+                        },
+                        {
+                          "text": "Verified the correct detail page is displayed\n"
+                        },
+                        {
+                          "text": "Navigated back to the locations page\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-17T20:36:15.786Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b20ded3eea964bbf8ec-013612ddd35b67ba6939",
+              "file": "tests/gnpLocationsDesktop.spec.js",
+              "line": 84,
+              "column": 5
+            },
+            {
+              "title": "Verify radius filter functions correctly for zip code 90806",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Chrome",
+                  "projectName": "Desktop Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 16922,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Entered digit: 9\n"
+                        },
+                        {
+                          "text": "Entered digit: 0\n"
+                        },
+                        {
+                          "text": "Entered digit: 8\n"
+                        },
+                        {
+                          "text": "Entered digit: 0\n"
+                        },
+                        {
+                          "text": "Entered digit: 6\n"
+                        },
+                        {
+                          "text": "City suggestion appeared\n"
+                        },
+                        {
+                          "text": "Pressed Enter to select the suggested city\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button\n"
+                        },
+                        {
+                          "text": "Number of results found: 87\n"
+                        },
+                        {
+                          "text": "Selected radius: 5 Miles\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button after selecting radius\n"
+                        },
+                        {
+                          "text": "Number of results found for 5 Miles: 12\n"
+                        },
+                        {
+                          "text": "Selected radius: 10 Miles\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button after selecting radius\n"
+                        },
+                        {
+                          "text": "Number of results found for 10 Miles: 24\n"
+                        },
+                        {
+                          "text": "Selected radius: 25 Miles\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button after selecting radius\n"
+                        },
+                        {
+                          "text": "Number of results found for 25 Miles: 87\n"
+                        },
+                        {
+                          "text": "Selected radius: 50 Miles\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button after selecting radius\n"
+                        },
+                        {
+                          "text": "Number of results found for 50 Miles: 115\n"
+                        },
+                        {
+                          "text": "Selected radius: 75 Miles\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button after selecting radius\n"
+                        },
+                        {
+                          "text": "Number of results found for 75 Miles: 115\n"
+                        },
+                        {
+                          "text": "Navigated back to the locations page\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-17T20:36:40.270Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Safari",
+                  "projectName": "Desktop Safari",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "status": "passed",
+                      "duration": 5522,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Entered digit: 9\n"
+                        },
+                        {
+                          "text": "Entered digit: 0\n"
+                        },
+                        {
+                          "text": "An unexpected error occurred: ExpectError: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"\u001b[7m9\u001b[27m0\"\u001b[39m\nReceived: \u001b[31m\"0\u001b[7m9\u001b[27m\"\u001b[39m\n    at \u001b[90m/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/\u001b[39mtests/gnpLocationsDesktop.spec.js:137:38 {\n  matcherResult: {\n    actual: \u001b[32m'09'\u001b[39m,\n    expected: \u001b[32m'90'\u001b[39m,\n    message: \u001b[32m'\\x1B[2mexpect(\\x1B[22m\\x1B[31mreceived\\x1B[39m\\x1B[2m).\\x1B[22mtoBe\\x1B[2m(\\x1B[22m\\x1B[32mexpected\\x1B[39m\\x1B[2m) // Object.is equality\\x1B[22m\\n'\u001b[39m +\n      \u001b[32m'\\n'\u001b[39m +\n      \u001b[32m'Expected: \\x1B[32m\"\\x1B[7m9\\x1B[27m0\"\\x1B[39m\\n'\u001b[39m +\n      \u001b[32m'Received: \\x1B[31m\"0\\x1B[7m9\\x1B[27m\"\\x1B[39m'\u001b[39m,\n    name: \u001b[32m'toBe'\u001b[39m,\n    pass: \u001b[33mfalse\u001b[39m\n  },\n  [\u001b[32mSymbol(step)\u001b[39m]: {\n    stepId: \u001b[32m'expect@13'\u001b[39m,\n    category: \u001b[32m'expect'\u001b[39m,\n    title: \u001b[32m'expect.toBe'\u001b[39m,\n    params: { expected: \u001b[32m'90'\u001b[39m },\n    infectParentStepsWithError: \u001b[90mundefined\u001b[39m,\n    boxedStack: \u001b[90mundefined\u001b[39m,\n    location: {\n      file: \u001b[32m'/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js'\u001b[39m,\n      line: \u001b[33m137\u001b[39m,\n      column: \u001b[33m38\u001b[39m,\n      function: \u001b[90mundefined\u001b[39m\n    },\n    steps: [],\n    complete: \u001b[36m[Function: complete]\u001b[39m,\n    endWallTime: \u001b[33m1726605376710\u001b[39m,\n    error: {\n      message: \u001b[32m'Error: \\x1B[2mexpect(\\x1B[22m\\x1B[31mreceived\\x1B[39m\\x1B[2m).\\x1B[22mtoBe\\x1B[2m(\\x1B[22m\\x1B[32mexpected\\x1B[39m\\x1B[2m) // Object.is equality\\x1B[22m\\n'\u001b[39m +\n        \u001b[32m'\\n'\u001b[39m +\n        \u001b[32m'Expected: \\x1B[32m\"\\x1B[7m9\\x1B[27m0\"\\x1B[39m\\n'\u001b[39m +\n        \u001b[32m'Received: \\x1B[31m\"0\\x1B[7m9\\x1B[27m\"\\x1B[39m'\u001b[39m,\n      stack: \u001b[32m'Error: \\x1B[2mexpect(\\x1B[22m\\x1B[31mreceived\\x1B[39m\\x1B[2m).\\x1B[22mtoBe\\x1B[2m(\\x1B[22m\\x1B[32mexpected\\x1B[39m\\x1B[2m) // Object.is equality\\x1B[22m\\n'\u001b[39m +\n        \u001b[32m'\\n'\u001b[39m +\n        \u001b[32m'Expected: \\x1B[32m\"\\x1B[7m9\\x1B[27m0\"\\x1B[39m\\n'\u001b[39m +\n        \u001b[32m'Received: \\x1B[31m\"0\\x1B[7m9\\x1B[27m\"\\x1B[39m\\n'\u001b[39m +\n        \u001b[32m'    at /Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js:137:38'\u001b[39m\n    }\n  }\n}\n"
+                        },
+                        {
+                          "text": "Navigated back to the locations page\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-17T20:36:11.794Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Firefox",
+                  "projectName": "Desktop Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "status": "passed",
+                      "duration": 6431,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Entered digit: 9\n"
+                        },
+                        {
+                          "text": "Entered digit: 0\n"
+                        },
+                        {
+                          "text": "An unexpected error occurred: ExpectError: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"\u001b[7m9\u001b[27m0\"\u001b[39m\nReceived: \u001b[31m\"0\u001b[7m9\u001b[27m\"\u001b[39m\n    at \u001b[90m/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/\u001b[39mtests/gnpLocationsDesktop.spec.js:137:38 {\n  matcherResult: {\n    actual: \u001b[32m'09'\u001b[39m,\n    expected: \u001b[32m'90'\u001b[39m,\n    message: \u001b[32m'\\x1B[2mexpect(\\x1B[22m\\x1B[31mreceived\\x1B[39m\\x1B[2m).\\x1B[22mtoBe\\x1B[2m(\\x1B[22m\\x1B[32mexpected\\x1B[39m\\x1B[2m) // Object.is equality\\x1B[22m\\n'\u001b[39m +\n      \u001b[32m'\\n'\u001b[39m +\n      \u001b[32m'Expected: \\x1B[32m\"\\x1B[7m9\\x1B[27m0\"\\x1B[39m\\n'\u001b[39m +\n      \u001b[32m'Received: \\x1B[31m\"0\\x1B[7m9\\x1B[27m\"\\x1B[39m'\u001b[39m,\n    name: \u001b[32m'toBe'\u001b[39m,\n    pass: \u001b[33mfalse\u001b[39m\n  },\n  [\u001b[32mSymbol(step)\u001b[39m]: {\n    stepId: \u001b[32m'expect@13'\u001b[39m,\n    category: \u001b[32m'expect'\u001b[39m,\n    title: \u001b[32m'expect.toBe'\u001b[39m,\n    params: { expected: \u001b[32m'90'\u001b[39m },\n    infectParentStepsWithError: \u001b[90mundefined\u001b[39m,\n    boxedStack: \u001b[90mundefined\u001b[39m,\n    location: {\n      file: \u001b[32m'/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js'\u001b[39m,\n      line: \u001b[33m137\u001b[39m,\n      column: \u001b[33m38\u001b[39m,\n      function: \u001b[90mundefined\u001b[39m\n    },\n    steps: [],\n    complete: \u001b[36m[Function: complete]\u001b[39m,\n    endWallTime: \u001b[33m1726605388744\u001b[39m,\n    error: {\n      message: \u001b[32m'Error: \\x1B[2mexpect(\\x1B[22m\\x1B[31mreceived\\x1B[39m\\x1B[2m).\\x1B[22mtoBe\\x1B[2m(\\x1B[22m\\x1B[32mexpected\\x1B[39m\\x1B[2m) // Object.is equality\\x1B[22m\\n'\u001b[39m +\n        \u001b[32m'\\n'\u001b[39m +\n        \u001b[32m'Expected: \\x1B[32m\"\\x1B[7m9\\x1B[27m0\"\\x1B[39m\\n'\u001b[39m +\n        \u001b[32m'Received: \\x1B[31m\"0\\x1B[7m9\\x1B[27m\"\\x1B[39m'\u001b[39m,\n      stack: \u001b[32m'Error: \\x1B[2mexpect(\\x1B[22m\\x1B[31mreceived\\x1B[39m\\x1B[2m).\\x1B[22mtoBe\\x1B[2m(\\x1B[22m\\x1B[32mexpected\\x1B[39m\\x1B[2m) // Object.is equality\\x1B[22m\\n'\u001b[39m +\n        \u001b[32m'\\n'\u001b[39m +\n        \u001b[32m'Expected: \\x1B[32m\"\\x1B[7m9\\x1B[27m0\"\\x1B[39m\\n'\u001b[39m +\n        \u001b[32m'Received: \\x1B[31m\"0\\x1B[7m9\\x1B[27m\"\\x1B[39m\\n'\u001b[39m +\n        \u001b[32m'    at /Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js:137:38'\u001b[39m\n    }\n  }\n}\n"
+                        },
+                        {
+                          "text": "Navigated back to the locations page\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-17T20:36:22.991Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b20ded3eea964bbf8ec-490ce8588c658e10500d",
+              "file": "tests/gnpLocationsDesktop.spec.js",
+              "line": 117,
+              "column": 5
+            },
+            {
+              "title": "Verify \"View Details\" link opens the correct location details",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Chrome",
+                  "projectName": "Desktop Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 12392,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Entered digit: 9\n"
+                        },
+                        {
+                          "text": "Entered digit: 0\n"
+                        },
+                        {
+                          "text": "Entered digit: 8\n"
+                        },
+                        {
+                          "text": "Entered digit: 0\n"
+                        },
+                        {
+                          "text": "Entered digit: 6\n"
+                        },
+                        {
+                          "text": "City suggestion appeared\n"
+                        },
+                        {
+                          "text": "Pressed Enter to select the suggested city\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button\n"
+                        },
+                        {
+                          "text": "First location record is visible\n"
+                        },
+                        {
+                          "text": "Detail record link: /locations/fresenius-kidney-care-long-beach\n"
+                        },
+                        {
+                          "text": "Clicked on the \"View Details\" link\n"
+                        },
+                        {
+                          "text": "Navigated to the correct location details page: https://www.gnpweb.com/locations/fresenius-kidney-care-long-beach\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-17T20:36:57.197Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Safari",
+                  "projectName": "Desktop Safari",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "status": "passed",
+                      "duration": 3531,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Entered digit: 9\n"
+                        },
+                        {
+                          "text": "An error occurred: ExpectError: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"9\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\n    at \u001b[90m/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/\u001b[39mtests/gnpLocationsDesktop.spec.js:211:38 {\n  matcherResult: {\n    actual: \u001b[32m''\u001b[39m,\n    expected: \u001b[32m'9'\u001b[39m,\n    message: \u001b[32m'\\x1B[2mexpect(\\x1B[22m\\x1B[31mreceived\\x1B[39m\\x1B[2m).\\x1B[22mtoBe\\x1B[2m(\\x1B[22m\\x1B[32mexpected\\x1B[39m\\x1B[2m) // Object.is equality\\x1B[22m\\n'\u001b[39m +\n      \u001b[32m'\\n'\u001b[39m +\n      \u001b[32m'Expected: \\x1B[32m\"9\"\\x1B[39m\\n'\u001b[39m +\n      \u001b[32m'Received: \\x1B[31m\"\"\\x1B[39m'\u001b[39m,\n    name: \u001b[32m'toBe'\u001b[39m,\n    pass: \u001b[33mfalse\u001b[39m\n  },\n  [\u001b[32mSymbol(step)\u001b[39m]: {\n    stepId: \u001b[32m'expect@10'\u001b[39m,\n    category: \u001b[32m'expect'\u001b[39m,\n    title: \u001b[32m'expect.toBe'\u001b[39m,\n    params: { expected: \u001b[32m'9'\u001b[39m },\n    infectParentStepsWithError: \u001b[90mundefined\u001b[39m,\n    boxedStack: \u001b[90mundefined\u001b[39m,\n    location: {\n      file: \u001b[32m'/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js'\u001b[39m,\n      line: \u001b[33m211\u001b[39m,\n      column: \u001b[33m38\u001b[39m,\n      function: \u001b[90mundefined\u001b[39m\n    },\n    steps: [],\n    complete: \u001b[36m[Function: complete]\u001b[39m,\n    endWallTime: \u001b[33m1726605380828\u001b[39m,\n    error: {\n      message: \u001b[32m'Error: \\x1B[2mexpect(\\x1B[22m\\x1B[31mreceived\\x1B[39m\\x1B[2m).\\x1B[22mtoBe\\x1B[2m(\\x1B[22m\\x1B[32mexpected\\x1B[39m\\x1B[2m) // Object.is equality\\x1B[22m\\n'\u001b[39m +\n        \u001b[32m'\\n'\u001b[39m +\n        \u001b[32m'Expected: \\x1B[32m\"9\"\\x1B[39m\\n'\u001b[39m +\n        \u001b[32m'Received: \\x1B[31m\"\"\\x1B[39m'\u001b[39m,\n      stack: \u001b[32m'Error: \\x1B[2mexpect(\\x1B[22m\\x1B[31mreceived\\x1B[39m\\x1B[2m).\\x1B[22mtoBe\\x1B[2m(\\x1B[22m\\x1B[32mexpected\\x1B[39m\\x1B[2m) // Object.is equality\\x1B[22m\\n'\u001b[39m +\n        \u001b[32m'\\n'\u001b[39m +\n        \u001b[32m'Expected: \\x1B[32m\"9\"\\x1B[39m\\n'\u001b[39m +\n        \u001b[32m'Received: \\x1B[31m\"\"\\x1B[39m\\n'\u001b[39m +\n        \u001b[32m'    at /Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js:211:38'\u001b[39m\n    }\n  }\n}\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-17T20:36:17.324Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Firefox",
+                  "projectName": "Desktop Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "status": "passed",
+                      "duration": 3658,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Entered digit: 9\n"
+                        },
+                        {
+                          "text": "An error occurred: ExpectError: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"9\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\n    at \u001b[90m/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/\u001b[39mtests/gnpLocationsDesktop.spec.js:211:38 {\n  matcherResult: {\n    actual: \u001b[32m''\u001b[39m,\n    expected: \u001b[32m'9'\u001b[39m,\n    message: \u001b[32m'\\x1B[2mexpect(\\x1B[22m\\x1B[31mreceived\\x1B[39m\\x1B[2m).\\x1B[22mtoBe\\x1B[2m(\\x1B[22m\\x1B[32mexpected\\x1B[39m\\x1B[2m) // Object.is equality\\x1B[22m\\n'\u001b[39m +\n      \u001b[32m'\\n'\u001b[39m +\n      \u001b[32m'Expected: \\x1B[32m\"9\"\\x1B[39m\\n'\u001b[39m +\n      \u001b[32m'Received: \\x1B[31m\"\"\\x1B[39m'\u001b[39m,\n    name: \u001b[32m'toBe'\u001b[39m,\n    pass: \u001b[33mfalse\u001b[39m\n  },\n  [\u001b[32mSymbol(step)\u001b[39m]: {\n    stepId: \u001b[32m'expect@10'\u001b[39m,\n    category: \u001b[32m'expect'\u001b[39m,\n    title: \u001b[32m'expect.toBe'\u001b[39m,\n    params: { expected: \u001b[32m'9'\u001b[39m },\n    infectParentStepsWithError: \u001b[90mundefined\u001b[39m,\n    boxedStack: \u001b[90mundefined\u001b[39m,\n    location: {\n      file: \u001b[32m'/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js'\u001b[39m,\n      line: \u001b[33m211\u001b[39m,\n      column: \u001b[33m38\u001b[39m,\n      function: \u001b[90mundefined\u001b[39m\n    },\n    steps: [],\n    complete: \u001b[36m[Function: complete]\u001b[39m,\n    endWallTime: \u001b[33m1726605393071\u001b[39m,\n    error: {\n      message: \u001b[32m'Error: \\x1B[2mexpect(\\x1B[22m\\x1B[31mreceived\\x1B[39m\\x1B[2m).\\x1B[22mtoBe\\x1B[2m(\\x1B[22m\\x1B[32mexpected\\x1B[39m\\x1B[2m) // Object.is equality\\x1B[22m\\n'\u001b[39m +\n        \u001b[32m'\\n'\u001b[39m +\n        \u001b[32m'Expected: \\x1B[32m\"9\"\\x1B[39m\\n'\u001b[39m +\n        \u001b[32m'Received: \\x1B[31m\"\"\\x1B[39m'\u001b[39m,\n      stack: \u001b[32m'Error: \\x1B[2mexpect(\\x1B[22m\\x1B[31mreceived\\x1B[39m\\x1B[2m).\\x1B[22mtoBe\\x1B[2m(\\x1B[22m\\x1B[32mexpected\\x1B[39m\\x1B[2m) // Object.is equality\\x1B[22m\\n'\u001b[39m +\n        \u001b[32m'\\n'\u001b[39m +\n        \u001b[32m'Expected: \\x1B[32m\"9\"\\x1B[39m\\n'\u001b[39m +\n        \u001b[32m'Received: \\x1B[31m\"\"\\x1B[39m\\n'\u001b[39m +\n        \u001b[32m'    at /Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js:211:38'\u001b[39m\n    }\n  }\n}\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-17T20:36:29.445Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b20ded3eea964bbf8ec-f2f2918ee75230ac4e64",
+              "file": "tests/gnpLocationsDesktop.spec.js",
+              "line": 193,
+              "column": 5
+            },
+            {
+              "title": "Verify \"View on Map\" function links to the correct map pin",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Chrome",
+                  "projectName": "Desktop Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 9396,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Entered digit: 9\n"
+                        },
+                        {
+                          "text": "Entered digit: 0\n"
+                        },
+                        {
+                          "text": "Entered digit: 8\n"
+                        },
+                        {
+                          "text": "Entered digit: 0\n"
+                        },
+                        {
+                          "text": "Entered digit: 6\n"
+                        },
+                        {
+                          "text": "City suggestion appeared\n"
+                        },
+                        {
+                          "text": "Pressed Enter to select the suggested city\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button\n"
+                        },
+                        {
+                          "text": "First location record is visible\n"
+                        },
+                        {
+                          "text": "Clicked on the \"View on Map\" link\n"
+                        },
+                        {
+                          "text": "Active map pin is visible\n"
+                        },
+                        {
+                          "text": "Active map pin corresponds to: \n                    Fresenius Kidney Care - Long Beach\n                  \n"
+                        },
+                        {
+                          "text": "Verified that the map pin corresponds to the correct location: \n                    Fresenius Kidney Care - Long Beach\n                  \n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-17T20:37:09.594Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Safari",
+                  "projectName": "Desktop Safari",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "status": "passed",
+                      "duration": 10900,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Entered digit: 9\n"
+                        },
+                        {
+                          "text": "Entered digit: 0\n"
+                        },
+                        {
+                          "text": "Entered digit: 8\n"
+                        },
+                        {
+                          "text": "Entered digit: 0\n"
+                        },
+                        {
+                          "text": "Entered digit: 6\n"
+                        },
+                        {
+                          "text": "City suggestion appeared\n"
+                        },
+                        {
+                          "text": "Pressed Enter to select the suggested city\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button\n"
+                        },
+                        {
+                          "text": "First location record is visible\n"
+                        },
+                        {
+                          "text": "Clicked on the \"View on Map\" link\n"
+                        },
+                        {
+                          "text": "Active map pin is visible\n"
+                        },
+                        {
+                          "text": "Active map pin corresponds to: \n                    Fresenius Kidney Care - Long Beach\n                  \n"
+                        },
+                        {
+                          "text": "Verified that the map pin corresponds to the correct location: \n                    Fresenius Kidney Care - Long Beach\n                  \n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-17T20:36:20.863Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Firefox",
+                  "projectName": "Desktop Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "status": "passed",
+                      "duration": 4299,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Entered digit: 9\n"
+                        },
+                        {
+                          "text": "Entered digit: 0\n"
+                        },
+                        {
+                          "text": "An error occurred: ExpectError: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"\u001b[7m9\u001b[27m0\"\u001b[39m\nReceived: \u001b[31m\"0\u001b[7m9\u001b[27m\"\u001b[39m\n    at \u001b[90m/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/\u001b[39mtests/gnpLocationsDesktop.spec.js:261:38 {\n  matcherResult: {\n    actual: \u001b[32m'09'\u001b[39m,\n    expected: \u001b[32m'90'\u001b[39m,\n    message: \u001b[32m'\\x1B[2mexpect(\\x1B[22m\\x1B[31mreceived\\x1B[39m\\x1B[2m).\\x1B[22mtoBe\\x1B[2m(\\x1B[22m\\x1B[32mexpected\\x1B[39m\\x1B[2m) // Object.is equality\\x1B[22m\\n'\u001b[39m +\n      \u001b[32m'\\n'\u001b[39m +\n      \u001b[32m'Expected: \\x1B[32m\"\\x1B[7m9\\x1B[27m0\"\\x1B[39m\\n'\u001b[39m +\n      \u001b[32m'Received: \\x1B[31m\"0\\x1B[7m9\\x1B[27m\"\\x1B[39m'\u001b[39m,\n    name: \u001b[32m'toBe'\u001b[39m,\n    pass: \u001b[33mfalse\u001b[39m\n  },\n  [\u001b[32mSymbol(step)\u001b[39m]: {\n    stepId: \u001b[32m'expect@13'\u001b[39m,\n    category: \u001b[32m'expect'\u001b[39m,\n    title: \u001b[32m'expect.toBe'\u001b[39m,\n    params: { expected: \u001b[32m'90'\u001b[39m },\n    infectParentStepsWithError: \u001b[90mundefined\u001b[39m,\n    boxedStack: \u001b[90mundefined\u001b[39m,\n    location: {\n      file: \u001b[32m'/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js'\u001b[39m,\n      line: \u001b[33m261\u001b[39m,\n      column: \u001b[33m38\u001b[39m,\n      function: \u001b[90mundefined\u001b[39m\n    },\n    steps: [],\n    complete: \u001b[36m[Function: complete]\u001b[39m,\n    endWallTime: \u001b[33m1726605397365\u001b[39m,\n    error: {\n      message: \u001b[32m'Error: \\x1B[2mexpect(\\x1B[22m\\x1B[31mreceived\\x1B[39m\\x1B[2m).\\x1B[22mtoBe\\x1B[2m(\\x1B[22m\\x1B[32mexpected\\x1B[39m\\x1B[2m) // Object.is equality\\x1B[22m\\n'\u001b[39m +\n        \u001b[32m'\\n'\u001b[39m +\n        \u001b[32m'Expected: \\x1B[32m\"\\x1B[7m9\\x1B[27m0\"\\x1B[39m\\n'\u001b[39m +\n        \u001b[32m'Received: \\x1B[31m\"0\\x1B[7m9\\x1B[27m\"\\x1B[39m'\u001b[39m,\n      stack: \u001b[32m'Error: \\x1B[2mexpect(\\x1B[22m\\x1B[31mreceived\\x1B[39m\\x1B[2m).\\x1B[22mtoBe\\x1B[2m(\\x1B[22m\\x1B[32mexpected\\x1B[39m\\x1B[2m) // Object.is equality\\x1B[22m\\n'\u001b[39m +\n        \u001b[32m'\\n'\u001b[39m +\n        \u001b[32m'Expected: \\x1B[32m\"\\x1B[7m9\\x1B[27m0\"\\x1B[39m\\n'\u001b[39m +\n        \u001b[32m'Received: \\x1B[31m\"0\\x1B[7m9\\x1B[27m\"\\x1B[39m\\n'\u001b[39m +\n        \u001b[32m'    at /Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js:261:38'\u001b[39m\n    }\n  }\n}\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-17T20:36:33.109Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b20ded3eea964bbf8ec-115f357f10db20a13553",
+              "file": "tests/gnpLocationsDesktop.spec.js",
+              "line": 243,
+              "column": 5
             }
           ]
         }
@@ -159,9 +1047,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-09-12T14:11:02.992Z",
-    "duration": 2580.734999999986,
-    "expected": 1,
+    "startTime": "2024-09-17T20:35:53.037Z",
+    "duration": 86237.33099999999,
+    "expected": 18,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
