@@ -8,10 +8,6 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-    routes:
-      - type: web
-        source: /
-        destination: https://memorialcareplaywright.onrender.com
     healthCheckPath: /
     autoDeploy: true
     branch: main
