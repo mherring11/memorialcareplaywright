@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+echo "Running Playwright test: $1"
+
 if [ $# -eq 0 ]; then
   echo "Please provide at least one test file to run (e.g., gnpHeaderFooter.spec.js)"
   exit 1
