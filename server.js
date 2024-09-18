@@ -6,6 +6,10 @@ const fs = require('fs');
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.get('/', (req, res) => {
+  res.status(200).send('Server is up and running!');
+});
+
 app.get('/run-test/:testName', (req, res) => {
     const testName = req.params.testName;
     const scriptPath = path.join(__dirname, 'runTestAndCapture.sh');
