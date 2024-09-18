@@ -8,16 +8,18 @@ Running 18 tests using 3 workers
 [1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:5:3 › GNP Locations Page Tests › Verify that the map loads
 Navigated to locations page
 
-[1A[2KMap is visible on the page
-
-[1A[2KVerified that the map is loaded and visible
-
-[1A[2K[4/18] [Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
 [1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:5:3 › GNP Locations Page Tests › Verify that the map loads
 Navigated to locations page
 
-[1A[2KMap is visible on the page
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:5:3 › GNP Locations Page Tests › Verify that the map loads
+Map is visible on the page
 
+[1A[2KVerified that the map is loaded and visible
+
+[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:5:3 › GNP Locations Page Tests › Verify that the map loads
+Map is visible on the page
+
+[1A[2K[4/18] [Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
 [1A[2KVerified that the map is loaded and visible
 
 [1A[2K[5/18] [Desktop Safari] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
@@ -27,7 +29,11 @@ Navigated to locations page
 [1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:5:3 › GNP Locations Page Tests › Verify that the map loads
 Navigated to locations page
 
-[1A[2KMap is visible on the page
+[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Navigated to locations page
+
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:5:3 › GNP Locations Page Tests › Verify that the map loads
+Map is visible on the page
 
 [1A[2KVerified that the map is loaded and visible
 
@@ -39,129 +45,85 @@ Entered digit: 9
 Navigated to locations page
 
 [1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
-Navigated to locations page
+Entered digit: 9
 
 [1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
 Entered digit: 0
 
-[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
-Entered digit: 9
-
 [1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
 Entered digit: 9
 
+[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Entered digit: 0
+
+[1A[2KAn unexpected error occurred: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m"[7m9[27m0"[39m
+Received: [31m"0[7m9[27m"[39m
+    at [90m/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/[39mtests/gnpLocationsDesktop.spec.js:39:38 {
+  matcherResult: {
+    actual: [32m'09'[39m,
+    expected: [32m'90'[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [[32mSymbol(step)[39m]: {
+    stepId: [32m'expect@13'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [32m'90'[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js'[39m,
+      line: [33m39[39m,
+      column: [33m38[39m,
+      function: [90mundefined[39m
+    },
+    steps: [],
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1726682150743[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m\n'[39m +
+        [32m'    at /Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js:39:38'[39m
+    }
+  }
+}
+
+[1A[2KNavigated back to the locations page
+
+[1A[2K[7/18] [Desktop Safari] › tests/gnpLocationsDesktop.spec.js:84:5 › GNP Locations Page Tests › Verify specific map pin connects to the correct detail record
 [1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
 Entered digit: 8
 
-[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
-Entered digit: 0
+[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:84:5 › GNP Locations Page Tests › Verify specific map pin connects to the correct detail record
+Navigated to locations page
+
+[1A[2KMap is visible
 
 [1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
 Entered digit: 0
 
-[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
-An unexpected error occurred: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
-
-Expected: [32m"[7m9[27m0"[39m
-Received: [31m"0[7m9[27m"[39m
-    at [90m/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/[39mtests/gnpLocationsDesktop.spec.js:39:38 {
-  matcherResult: {
-    actual: [32m'09'[39m,
-    expected: [32m'90'[39m,
-    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
-      [32m'\n'[39m +
-      [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
-      [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m'[39m,
-    name: [32m'toBe'[39m,
-    pass: [33mfalse[39m
-  },
-  [[32mSymbol(step)[39m]: {
-    stepId: [32m'expect@13'[39m,
-    category: [32m'expect'[39m,
-    title: [32m'expect.toBe'[39m,
-    params: { expected: [32m'90'[39m },
-    infectParentStepsWithError: [90mundefined[39m,
-    boxedStack: [90mundefined[39m,
-    location: {
-      file: [32m'/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js'[39m,
-      line: [33m39[39m,
-      column: [33m38[39m,
-      function: [90mundefined[39m
-    },
-    steps: [],
-    complete: [36m[Function: complete][39m,
-    endWallTime: [33m1726673138135[39m,
-    error: {
-      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
-        [32m'\n'[39m +
-        [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
-        [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m'[39m,
-      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
-        [32m'\n'[39m +
-        [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
-        [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m\n'[39m +
-        [32m'    at /Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js:39:38'[39m
-    }
-  }
-}
-
-[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
-An unexpected error occurred: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
-
-Expected: [32m"[7m9[27m0"[39m
-Received: [31m"0[7m9[27m"[39m
-    at [90m/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/[39mtests/gnpLocationsDesktop.spec.js:39:38 {
-  matcherResult: {
-    actual: [32m'09'[39m,
-    expected: [32m'90'[39m,
-    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
-      [32m'\n'[39m +
-      [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
-      [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m'[39m,
-    name: [32m'toBe'[39m,
-    pass: [33mfalse[39m
-  },
-  [[32mSymbol(step)[39m]: {
-    stepId: [32m'expect@13'[39m,
-    category: [32m'expect'[39m,
-    title: [32m'expect.toBe'[39m,
-    params: { expected: [32m'90'[39m },
-    infectParentStepsWithError: [90mundefined[39m,
-    boxedStack: [90mundefined[39m,
-    location: {
-      file: [32m'/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js'[39m,
-      line: [33m39[39m,
-      column: [33m38[39m,
-      function: [90mundefined[39m
-    },
-    steps: [],
-    complete: [36m[Function: complete][39m,
-    endWallTime: [33m1726673138138[39m,
-    error: {
-      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
-        [32m'\n'[39m +
-        [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
-        [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m'[39m,
-      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
-        [32m'\n'[39m +
-        [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
-        [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m\n'[39m +
-        [32m'    at /Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js:39:38'[39m
-    }
-  }
-}
+[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:84:5 › GNP Locations Page Tests › Verify specific map pin connects to the correct detail record
+Specific map pin is visible
 
 [1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
 Entered digit: 0
 
-[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
-Navigated back to the locations page
-
-[1A[2K[7/18] [Desktop Safari] › tests/gnpLocationsDesktop.spec.js:84:5 › GNP Locations Page Tests › Verify specific map pin connects to the correct detail record
 [1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
-Navigated back to the locations page
+Entered digit: 8
 
-[1A[2K[8/18] [Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:84:5 › GNP Locations Page Tests › Verify specific map pin connects to the correct detail record
 [1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
 Entered digit: 6
 
@@ -170,11 +132,21 @@ Entered digit: 6
 [1A[2KPressed Enter to select the suggested city
 
 [1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:84:5 › GNP Locations Page Tests › Verify specific map pin connects to the correct detail record
+Clicked on the specific map pin to view details
+
+[1A[2KNavigated to URL: https://www.gnpweb.com/locations/long-beach-medical-center
+
+[1A[2KVerified the correct detail page is displayed
+
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Entered digit: 0
+
+[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:84:5 › GNP Locations Page Tests › Verify specific map pin connects to the correct detail record
+Navigated back to the locations page
+
+[1A[2K[8/18] [Desktop Safari] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
+[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
 Navigated to locations page
-
-[1A[2KMap is visible
-
-[1A[2KSpecific map pin is visible
 
 [1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
 Clicked the "Filter Results" button
@@ -183,66 +155,160 @@ Clicked the "Filter Results" button
 
 [1A[2KCleared the zip code input field
 
-[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:84:5 › GNP Locations Page Tests › Verify specific map pin connects to the correct detail record
-Navigated to locations page
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Entered digit: 6
 
-[1A[2KMap is visible
+[1A[2KCity suggestion appeared
+
+[1A[2KPressed Enter to select the suggested city
+
+[1A[2KClicked the "Filter Results" button
+
+[1A[2KNumber of results found: 87
+
+[1A[2KCleared the zip code input field
 
 [1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
 Waited for 1 second before moving to the next zip code
 
-[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:84:5 › GNP Locations Page Tests › Verify specific map pin connects to the correct detail record
-Specific map pin is visible
+[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
+Entered digit: 9
 
-[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:84:5 › GNP Locations Page Tests › Verify specific map pin connects to the correct detail record
-Clicked on the specific map pin to view details
-
-[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:84:5 › GNP Locations Page Tests › Verify specific map pin connects to the correct detail record
-Clicked on the specific map pin to view details
-
-[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:84:5 › GNP Locations Page Tests › Verify specific map pin connects to the correct detail record
-Navigated to URL: https://www.gnpweb.com/locations/long-beach-medical-center
-
-[1A[2KVerified the correct detail page is displayed
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Waited for 1 second before moving to the next zip code
 
 [1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
 Entered digit: 9
 
-[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:84:5 › GNP Locations Page Tests › Verify specific map pin connects to the correct detail record
-Navigated back to the locations page
+[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
+Entered digit: 0
 
-[1A[2K[9/18] [Desktop Safari] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
-[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:84:5 › GNP Locations Page Tests › Verify specific map pin connects to the correct detail record
-Navigated to URL: https://www.gnpweb.com/locations/long-beach-medical-center
+[1A[2KAn unexpected error occurred: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
 
-[1A[2KVerified the correct detail page is displayed
+Expected: [32m"[7m9[27m0"[39m
+Received: [31m"0[7m9[27m"[39m
+    at [90m/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/[39mtests/gnpLocationsDesktop.spec.js:137:38 {
+  matcherResult: {
+    actual: [32m'09'[39m,
+    expected: [32m'90'[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [[32mSymbol(step)[39m]: {
+    stepId: [32m'expect@13'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [32m'90'[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js'[39m,
+      line: [33m137[39m,
+      column: [33m38[39m,
+      function: [90mundefined[39m
+    },
+    steps: [],
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1726682160479[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m\n'[39m +
+        [32m'    at /Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js:137:38'[39m
+    }
+  }
+}
 
 [1A[2KNavigated back to the locations page
 
-[1A[2K[10/18] [Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Entered digit: 9
+
+[1A[2K[9/18] [Desktop Safari] › tests/gnpLocationsDesktop.spec.js:193:5 › GNP Locations Page Tests › Verify "View Details" link opens the correct location details
 [1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
 Entered digit: 2
 
-[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
+[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:193:5 › GNP Locations Page Tests › Verify "View Details" link opens the correct location details
 Navigated to locations page
 
-[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
-Navigated to locations page
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Entered digit: 2
 
 [1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
 Entered digit: 7
 
-[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
+[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:193:5 › GNP Locations Page Tests › Verify "View Details" link opens the correct location details
 Entered digit: 9
+
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Entered digit: 7
 
 [1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
 Entered digit: 0
 
-[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
-Entered digit: 9
-
-[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
+[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:193:5 › GNP Locations Page Tests › Verify "View Details" link opens the correct location details
 Entered digit: 0
+
+[1A[2KAn error occurred: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m"[7m9[27m0"[39m
+Received: [31m"0[7m9[27m"[39m
+    at [90m/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/[39mtests/gnpLocationsDesktop.spec.js:211:38 {
+  matcherResult: {
+    actual: [32m'09'[39m,
+    expected: [32m'90'[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [[32mSymbol(step)[39m]: {
+    stepId: [32m'expect@13'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [32m'90'[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js'[39m,
+      line: [33m211[39m,
+      column: [33m38[39m,
+      function: [90mundefined[39m
+    },
+    steps: [],
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1726682164829[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m\n'[39m +
+        [32m'    at /Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js:211:38'[39m
+    }
+  }
+}
+
+[1A[2K[10/18] [Desktop Safari] › tests/gnpLocationsDesktop.spec.js:243:5 › GNP Locations Page Tests › Verify "View on Map" function links to the correct map pin
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Entered digit: 0
+
+[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:243:5 › GNP Locations Page Tests › Verify "View on Map" function links to the correct map pin
+Navigated to locations page
 
 [1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
 Entered digit: 8
@@ -250,6 +316,192 @@ Entered digit: 8
 [1A[2KCity suggestion appeared
 
 [1A[2KPressed Enter to select the suggested city
+
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Entered digit: 8
+
+[1A[2KCity suggestion appeared
+
+[1A[2KPressed Enter to select the suggested city
+
+[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:243:5 › GNP Locations Page Tests › Verify "View on Map" function links to the correct map pin
+Entered digit: 9
+
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Clicked the "Filter Results" button
+
+[1A[2KNumber of results found: 111
+
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Clicked the "Filter Results" button
+
+[1A[2KNumber of results found: 111
+
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Cleared the zip code input field
+
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Cleared the zip code input field
+
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Waited for 1 second before moving to the next zip code
+
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Waited for 1 second before moving to the next zip code
+
+[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:243:5 › GNP Locations Page Tests › Verify "View on Map" function links to the correct map pin
+Entered digit: 0
+
+[1A[2KAn error occurred: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m"[7m9[27m0"[39m
+Received: [31m"0[7m9[27m"[39m
+    at [90m/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/[39mtests/gnpLocationsDesktop.spec.js:261:38 {
+  matcherResult: {
+    actual: [32m'09'[39m,
+    expected: [32m'90'[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [[32mSymbol(step)[39m]: {
+    stepId: [32m'expect@13'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [32m'90'[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js'[39m,
+      line: [33m261[39m,
+      column: [33m38[39m,
+      function: [90mundefined[39m
+    },
+    steps: [],
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1726682169204[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m\n'[39m +
+        [32m'    at /Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js:261:38'[39m
+    }
+  }
+}
+
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Entered digit: 3
+
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Entered digit: 3
+
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Entered digit: 2
+
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Entered digit: 2
+
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Entered digit: 4
+
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Entered digit: 4
+
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Entered digit: 1
+
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Entered digit: 1
+
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Entered digit: 2
+
+[1A[2KCity suggestion appeared
+
+[1A[2KPressed Enter to select the suggested city
+
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Entered digit: 2
+
+[1A[2KCity suggestion appeared
+
+[1A[2KPressed Enter to select the suggested city
+
+[1A[2KClicked the "Filter Results" button
+
+[1A[2KNo results found for zip code: 32412
+
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Clicked the "Filter Results" button
+
+[1A[2KNo results found for zip code: 32412
+
+[1A[2KNavigated back to the locations page
+
+[1A[2K[11/18] [Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:84:5 › GNP Locations Page Tests › Verify specific map pin connects to the correct detail record
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
+Navigated back to the locations page
+
+[1A[2K[12/18] [Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:84:5 › GNP Locations Page Tests › Verify specific map pin connects to the correct detail record
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:84:5 › GNP Locations Page Tests › Verify specific map pin connects to the correct detail record
+Navigated to locations page
+
+[1A[2KMap is visible
+
+[1A[2KSpecific map pin is visible
+
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:84:5 › GNP Locations Page Tests › Verify specific map pin connects to the correct detail record
+Navigated to locations page
+
+[1A[2KMap is visible
+
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:84:5 › GNP Locations Page Tests › Verify specific map pin connects to the correct detail record
+Clicked on the specific map pin to view details
+
+[1A[2KNavigated to URL: https://www.gnpweb.com/locations/long-beach-medical-center
+
+[1A[2KVerified the correct detail page is displayed
+
+[1A[2KNavigated back to the locations page
+
+[1A[2K[13/18] [Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:84:5 › GNP Locations Page Tests › Verify specific map pin connects to the correct detail record
+Specific map pin is visible
+
+[1A[2KClicked on the specific map pin to view details
+
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
+Navigated to locations page
+
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:84:5 › GNP Locations Page Tests › Verify specific map pin connects to the correct detail record
+Navigated to URL: https://www.gnpweb.com/locations/long-beach-medical-center
+
+[1A[2KVerified the correct detail page is displayed
+
+[1A[2KNavigated back to the locations page
+
+[1A[2K[14/18] [Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
+Navigated to locations page
+
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
+Entered digit: 9
+
+[1A[2KEntered digit: 0
+
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
+Entered digit: 9
+
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
+Entered digit: 8
 
 [1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
 Entered digit: 0
@@ -284,7 +536,7 @@ Received: [31m"0[7m9[27m"[39m
     },
     steps: [],
     complete: [36m[Function: complete][39m,
-    endWallTime: [33m1726673151623[39m,
+    endWallTime: [33m1726682188691[39m,
     error: {
       message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
         [32m'\n'[39m +
@@ -299,30 +551,16 @@ Received: [31m"0[7m9[27m"[39m
   }
 }
 
-[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
-Entered digit: 8
+[1A[2KNavigated back to the locations page
 
-[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
-Navigated back to the locations page
-
-[1A[2K[11/18] [Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:193:5 › GNP Locations Page Tests › Verify "View Details" link opens the correct location details
-[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
+[1A[2K[15/18] [Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:193:5 › GNP Locations Page Tests › Verify "View Details" link opens the correct location details
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
 Entered digit: 0
-
-[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
-Clicked the "Filter Results" button
-
-[1A[2KNumber of results found: 111
-
-[1A[2KCleared the zip code input field
 
 [1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:193:5 › GNP Locations Page Tests › Verify "View Details" link opens the correct location details
 Navigated to locations page
 
-[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
-Waited for 1 second before moving to the next zip code
-
-[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
 Entered digit: 6
 
 [1A[2KCity suggestion appeared
@@ -338,373 +576,107 @@ Entered digit: 6
 [1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:193:5 › GNP Locations Page Tests › Verify "View Details" link opens the correct location details
 Entered digit: 9
 
-[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
-Entered digit: 3
-
-[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
 Clicked the "Filter Results" button after selecting radius
 
 [1A[2KNumber of results found for 5 Miles: 12
 
 [1A[2KSelected radius: 10 Miles
+
+[1A[2KClicked the "Filter Results" button after selecting radius
+
+[1A[2KNumber of results found for 10 Miles: 24
+
+[1A[2KSelected radius: 25 Miles
+
+[1A[2KClicked the "Filter Results" button after selecting radius
+
+[1A[2KNumber of results found for 25 Miles: 87
+
+[1A[2KSelected radius: 50 Miles
 
 [1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:193:5 › GNP Locations Page Tests › Verify "View Details" link opens the correct location details
 Entered digit: 0
 
-[1A[2KAn error occurred: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+[1A[2KEntered digit: 8
 
-Expected: [32m"[7m9[27m0"[39m
-Received: [31m"0[7m9[27m"[39m
-    at [90m/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/[39mtests/gnpLocationsDesktop.spec.js:211:38 {
-  matcherResult: {
-    actual: [32m'09'[39m,
-    expected: [32m'90'[39m,
-    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
-      [32m'\n'[39m +
-      [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
-      [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m'[39m,
-    name: [32m'toBe'[39m,
-    pass: [33mfalse[39m
-  },
-  [[32mSymbol(step)[39m]: {
-    stepId: [32m'expect@13'[39m,
-    category: [32m'expect'[39m,
-    title: [32m'expect.toBe'[39m,
-    params: { expected: [32m'90'[39m },
-    infectParentStepsWithError: [90mundefined[39m,
-    boxedStack: [90mundefined[39m,
-    location: {
-      file: [32m'/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js'[39m,
-      line: [33m211[39m,
-      column: [33m38[39m,
-      function: [90mundefined[39m
-    },
-    steps: [],
-    complete: [36m[Function: complete][39m,
-    endWallTime: [33m1726673157831[39m,
-    error: {
-      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
-        [32m'\n'[39m +
-        [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
-        [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m'[39m,
-      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
-        [32m'\n'[39m +
-        [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
-        [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m\n'[39m +
-        [32m'    at /Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js:211:38'[39m
-    }
-  }
-}
-
-[1A[2K[12/18] [Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:243:5 › GNP Locations Page Tests › Verify "View on Map" function links to the correct map pin
-[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
-Entered digit: 2
-
-[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
-Clicked the "Filter Results" button after selecting radius
-
-[1A[2KNumber of results found for 10 Miles: 24
-
-[1A[2KSelected radius: 25 Miles
-
-[1A[2KClicked the "Filter Results" button after selecting radius
-
-[1A[2KNumber of results found for 25 Miles: 87
-
-[1A[2KSelected radius: 50 Miles
-
-[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
-Entered digit: 4
-
-[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:243:5 › GNP Locations Page Tests › Verify "View on Map" function links to the correct map pin
-Navigated to locations page
-
-[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
-Entered digit: 1
-
-[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
 Clicked the "Filter Results" button after selecting radius
 
 [1A[2KNumber of results found for 50 Miles: 115
 
 [1A[2KSelected radius: 75 Miles
 
-[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:243:5 › GNP Locations Page Tests › Verify "View on Map" function links to the correct map pin
-Entered digit: 9
-
-[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
-Entered digit: 2
-
-[1A[2KCity suggestion appeared
-
-[1A[2KPressed Enter to select the suggested city
-
-[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:243:5 › GNP Locations Page Tests › Verify "View on Map" function links to the correct map pin
-Entered digit: 0
-
-[1A[2KAn error occurred: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
-
-Expected: [32m"[7m9[27m0"[39m
-Received: [31m"0[7m9[27m"[39m
-    at [90m/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/[39mtests/gnpLocationsDesktop.spec.js:261:38 {
-  matcherResult: {
-    actual: [32m'09'[39m,
-    expected: [32m'90'[39m,
-    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
-      [32m'\n'[39m +
-      [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
-      [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m'[39m,
-    name: [32m'toBe'[39m,
-    pass: [33mfalse[39m
-  },
-  [[32mSymbol(step)[39m]: {
-    stepId: [32m'expect@13'[39m,
-    category: [32m'expect'[39m,
-    title: [32m'expect.toBe'[39m,
-    params: { expected: [32m'90'[39m },
-    infectParentStepsWithError: [90mundefined[39m,
-    boxedStack: [90mundefined[39m,
-    location: {
-      file: [32m'/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js'[39m,
-      line: [33m261[39m,
-      column: [33m38[39m,
-      function: [90mundefined[39m
-    },
-    steps: [],
-    complete: [36m[Function: complete][39m,
-    endWallTime: [33m1726673163773[39m,
-    error: {
-      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
-        [32m'\n'[39m +
-        [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
-        [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m'[39m,
-      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
-        [32m'\n'[39m +
-        [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
-        [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m\n'[39m +
-        [32m'    at /Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js:261:38'[39m
-    }
-  }
-}
-
-[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
-Clicked the "Filter Results" button
-
-[1A[2KNo results found for zip code: 32412
-
-[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
-Clicked the "Filter Results" button after selecting radius
-
-[1A[2KNumber of results found for 75 Miles: 115
-
-[1A[2KNavigated back to the locations page
-
-[1A[2K[13/18] [Desktop Safari] › tests/gnpLocationsDesktop.spec.js:193:5 › GNP Locations Page Tests › Verify "View Details" link opens the correct location details
-[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:20:3 › GNP Locations Page Tests › Verify zip code search with California and non-California zip codes
-Navigated back to the locations page
-
-[1A[2K[14/18] [Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:84:5 › GNP Locations Page Tests › Verify specific map pin connects to the correct detail record
-[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:84:5 › GNP Locations Page Tests › Verify specific map pin connects to the correct detail record
-Navigated to locations page
-
-[1A[2KMap is visible
-
-[1A[2KSpecific map pin is visible
-
-[1A[2KClicked on the specific map pin to view details
-
-[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:193:5 › GNP Locations Page Tests › Verify "View Details" link opens the correct location details
-Navigated to locations page
-
-[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:84:5 › GNP Locations Page Tests › Verify specific map pin connects to the correct detail record
-Navigated to URL: https://www.gnpweb.com/locations/long-beach-medical-center
-
-[1A[2KVerified the correct detail page is displayed
-
-[1A[2KNavigated back to the locations page
-
-[1A[2K[15/18] [Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
-[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
-Navigated to locations page
-
-[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:193:5 › GNP Locations Page Tests › Verify "View Details" link opens the correct location details
-Entered digit: 9
-
-[1A[2KEntered digit: 0
-
-[1A[2KAn error occurred: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
-
-Expected: [32m"[7m9[27m0"[39m
-Received: [31m"0[7m9[27m"[39m
-    at [90m/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/[39mtests/gnpLocationsDesktop.spec.js:211:38 {
-  matcherResult: {
-    actual: [32m'09'[39m,
-    expected: [32m'90'[39m,
-    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
-      [32m'\n'[39m +
-      [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
-      [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m'[39m,
-    name: [32m'toBe'[39m,
-    pass: [33mfalse[39m
-  },
-  [[32mSymbol(step)[39m]: {
-    stepId: [32m'expect@13'[39m,
-    category: [32m'expect'[39m,
-    title: [32m'expect.toBe'[39m,
-    params: { expected: [32m'90'[39m },
-    infectParentStepsWithError: [90mundefined[39m,
-    boxedStack: [90mundefined[39m,
-    location: {
-      file: [32m'/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js'[39m,
-      line: [33m211[39m,
-      column: [33m38[39m,
-      function: [90mundefined[39m
-    },
-    steps: [],
-    complete: [36m[Function: complete][39m,
-    endWallTime: [33m1726673171334[39m,
-    error: {
-      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
-        [32m'\n'[39m +
-        [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
-        [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m'[39m,
-      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
-        [32m'\n'[39m +
-        [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
-        [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m\n'[39m +
-        [32m'    at /Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js:211:38'[39m
-    }
-  }
-}
-
-[1A[2K[16/18] [Desktop Safari] › tests/gnpLocationsDesktop.spec.js:243:5 › GNP Locations Page Tests › Verify "View on Map" function links to the correct map pin
-[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
-Entered digit: 9
-
-[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:243:5 › GNP Locations Page Tests › Verify "View on Map" function links to the correct map pin
-Navigated to locations page
-
-[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
-Entered digit: 0
-
-[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:243:5 › GNP Locations Page Tests › Verify "View on Map" function links to the correct map pin
-Entered digit: 9
-
-[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
-Entered digit: 8
-
-[1A[2K[Desktop Safari] › tests/gnpLocationsDesktop.spec.js:243:5 › GNP Locations Page Tests › Verify "View on Map" function links to the correct map pin
-Entered digit: 0
-
-[1A[2KAn error occurred: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
-
-Expected: [32m"[7m9[27m0"[39m
-Received: [31m"0[7m9[27m"[39m
-    at [90m/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/[39mtests/gnpLocationsDesktop.spec.js:261:38 {
-  matcherResult: {
-    actual: [32m'09'[39m,
-    expected: [32m'90'[39m,
-    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
-      [32m'\n'[39m +
-      [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
-      [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m'[39m,
-    name: [32m'toBe'[39m,
-    pass: [33mfalse[39m
-  },
-  [[32mSymbol(step)[39m]: {
-    stepId: [32m'expect@13'[39m,
-    category: [32m'expect'[39m,
-    title: [32m'expect.toBe'[39m,
-    params: { expected: [32m'90'[39m },
-    infectParentStepsWithError: [90mundefined[39m,
-    boxedStack: [90mundefined[39m,
-    location: {
-      file: [32m'/Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js'[39m,
-      line: [33m261[39m,
-      column: [33m38[39m,
-      function: [90mundefined[39m
-    },
-    steps: [],
-    complete: [36m[Function: complete][39m,
-    endWallTime: [33m1726673175560[39m,
-    error: {
-      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
-        [32m'\n'[39m +
-        [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
-        [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m'[39m,
-      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
-        [32m'\n'[39m +
-        [32m'Expected: \x1B[32m"\x1B[7m9\x1B[27m0"\x1B[39m\n'[39m +
-        [32m'Received: \x1B[31m"0\x1B[7m9\x1B[27m"\x1B[39m\n'[39m +
-        [32m'    at /Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/tests/gnpLocationsDesktop.spec.js:261:38'[39m
-    }
-  }
-}
-
-[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:193:5 › GNP Locations Page Tests › Verify "View Details" link opens the correct location details
 Entered digit: 0
 
 [1A[2KEntered digit: 6
 
 [1A[2KCity suggestion appeared
 
-[1A[2KPressed Enter to select the suggested city
-
-[1A[2KClicked the "Filter Results" button
-
-[1A[2KNumber of results found: 87
-
-[1A[2KSelected radius: 5 Miles
-
-[1A[2KClicked the "Filter Results" button after selecting radius
-
-[1A[2KNumber of results found for 5 Miles: 12
-
-[1A[2KSelected radius: 10 Miles
-
-[1A[2KClicked the "Filter Results" button after selecting radius
-
-[1A[2KNumber of results found for 10 Miles: 24
-
-[1A[2KSelected radius: 25 Miles
-
-[1A[2KClicked the "Filter Results" button after selecting radius
-
-[1A[2KNumber of results found for 25 Miles: 87
-
-[1A[2KSelected radius: 50 Miles
-
-[1A[2KClicked the "Filter Results" button after selecting radius
-
-[1A[2KNumber of results found for 50 Miles: 115
-
-[1A[2KSelected radius: 75 Miles
-
-[1A[2KClicked the "Filter Results" button after selecting radius
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
+Clicked the "Filter Results" button after selecting radius
 
 [1A[2KNumber of results found for 75 Miles: 115
 
-[1A[2KNavigated back to the locations page
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:193:5 › GNP Locations Page Tests › Verify "View Details" link opens the correct location details
+Pressed Enter to select the suggested city
 
-[1A[2K[17/18] [Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:193:5 › GNP Locations Page Tests › Verify "View Details" link opens the correct location details
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:117:5 › GNP Locations Page Tests › Verify radius filter functions correctly for zip code 90806
+Navigated back to the locations page
+
+[1A[2K[16/18] [Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:193:5 › GNP Locations Page Tests › Verify "View Details" link opens the correct location details
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:193:5 › GNP Locations Page Tests › Verify "View Details" link opens the correct location details
+Clicked the "Filter Results" button
+
+[1A[2KFirst location record is visible
+
+[1A[2KDetail record link: /locations/fresenius-kidney-care-long-beach
+
+[1A[2KClicked on the "View Details" link
+
 [1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:193:5 › GNP Locations Page Tests › Verify "View Details" link opens the correct location details
 Navigated to locations page
 
-[1A[2KEntered digit: 9
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:193:5 › GNP Locations Page Tests › Verify "View Details" link opens the correct location details
+Navigated to the correct location details page: https://www.gnpweb.com/locations/fresenius-kidney-care-long-beach
 
-[1A[2KEntered digit: 0
+[1A[2K[17/18] [Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:243:5 › GNP Locations Page Tests › Verify "View on Map" function links to the correct map pin
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:243:5 › GNP Locations Page Tests › Verify "View on Map" function links to the correct map pin
+Navigated to locations page
+
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:193:5 › GNP Locations Page Tests › Verify "View Details" link opens the correct location details
+Entered digit: 9
+
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:243:5 › GNP Locations Page Tests › Verify "View on Map" function links to the correct map pin
+Entered digit: 9
+
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:193:5 › GNP Locations Page Tests › Verify "View Details" link opens the correct location details
+Entered digit: 0
 
 [1A[2KEntered digit: 8
 
-[1A[2KEntered digit: 0
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:243:5 › GNP Locations Page Tests › Verify "View on Map" function links to the correct map pin
+Entered digit: 0
 
-[1A[2KEntered digit: 6
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:193:5 › GNP Locations Page Tests › Verify "View Details" link opens the correct location details
+Entered digit: 0
+
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:243:5 › GNP Locations Page Tests › Verify "View on Map" function links to the correct map pin
+Entered digit: 8
+
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:193:5 › GNP Locations Page Tests › Verify "View Details" link opens the correct location details
+Entered digit: 6
 
 [1A[2KCity suggestion appeared
 
 [1A[2KPressed Enter to select the suggested city
 
-[1A[2KClicked the "Filter Results" button
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:243:5 › GNP Locations Page Tests › Verify "View on Map" function links to the correct map pin
+Entered digit: 0
+
+[1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:193:5 › GNP Locations Page Tests › Verify "View Details" link opens the correct location details
+Clicked the "Filter Results" button
 
 [1A[2KFirst location record is visible
 
@@ -715,6 +687,29 @@ Navigated to locations page
 [1A[2KNavigated to the correct location details page: https://www.gnpweb.com/locations/fresenius-kidney-care-long-beach
 
 [1A[2K[18/18] [Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:243:5 › GNP Locations Page Tests › Verify "View on Map" function links to the correct map pin
+[1A[2K[Desktop Firefox] › tests/gnpLocationsDesktop.spec.js:243:5 › GNP Locations Page Tests › Verify "View on Map" function links to the correct map pin
+Entered digit: 6
+
+[1A[2KCity suggestion appeared
+
+[1A[2KPressed Enter to select the suggested city
+
+[1A[2KClicked the "Filter Results" button
+
+[1A[2KFirst location record is visible
+
+[1A[2KClicked on the "View on Map" link
+
+[1A[2KActive map pin is visible
+
+[1A[2KActive map pin corresponds to: 
+                    Fresenius Kidney Care - Long Beach
+                  
+
+[1A[2KVerified that the map pin corresponds to the correct location: 
+                    Fresenius Kidney Care - Long Beach
+                  
+
 [1A[2K[Desktop Chrome] › tests/gnpLocationsDesktop.spec.js:243:5 › GNP Locations Page Tests › Verify "View on Map" function links to the correct map pin
 Navigated to locations page
 
@@ -748,9 +743,9 @@ Navigated to locations page
                     Fresenius Kidney Care - Long Beach
                   
 
-[1A[2K  Slow test file: [Desktop Chrome] › tests/gnpLocationsDesktop.spec.js (1.2m)
-  Slow test file: [Desktop Safari] › tests/gnpLocationsDesktop.spec.js (49.4s)
-  Slow test file: [Desktop Firefox] › tests/gnpLocationsDesktop.spec.js (37.2s)
+[1A[2K  Slow test file: [Desktop Chrome] › tests/gnpLocationsDesktop.spec.js (1.3m)
+  Slow test file: [Desktop Firefox] › tests/gnpLocationsDesktop.spec.js (1.1m)
+  Slow test file: [Desktop Safari] › tests/gnpLocationsDesktop.spec.js (27.7s)
   Consider splitting slow test files to speed up parallel execution
   18 passed (1.3m)
 
@@ -762,18 +757,5 @@ Navigated to Playwright report
 Page fully loaded
 Screenshot taken and saved as /Users/mherring/projects/playwrightmemorialcare/memorialcareplaywright/results/testResultsScreenshot/gnpLocationsDesktop-spec-report.png
 updating: results/testResultsScreenshot/ (stored 0%)
-updating: results/testResultsScreenshot/gnpHeaderFooterMobile-spec-report.png (deflated 6%)
-updating: results/testResultsScreenshot/gnpLocationsMobile-spec-report.png (deflated 4%)
-updating: results/testResultsScreenshot/memorialcareBlogMobile-spec-report.png (deflated 4%)
-updating: results/testResultsScreenshot/memorialcareEventsMobile-spec-report.png (deflated 4%)
-updating: results/testResultsScreenshot/memorialcareHeaderFooterMobile-spec-report.png (deflated 7%)
-updating: results/testResultsScreenshot/memorialcareSearchMobile-spec-report.png (deflated 7%)
-updating: results/testResultsScreenshot/memorialcareServicesMobile-spec-report.png (deflated 5%)
-updating: results/testResultsScreenshot/gnpHeaderFooterDesktop-spec-report.png (deflated 4%)
 updating: results/testResultsScreenshot/gnpLocationsDesktop-spec-report.png (deflated 3%)
-updating: results/testResultsScreenshot/memorialcareBlogDesktop-spec-report.png (deflated 3%)
-updating: results/testResultsScreenshot/memorialcareEventsDesktop-spec-report.png (deflated 4%)
-updating: results/testResultsScreenshot/memorialcareHeaderFooterDesktop-spec-report.png (deflated 5%)
-updating: results/testResultsScreenshot/memorialcareSearchDesktop-spec-report.png (deflated 6%)
-updating: results/testResultsScreenshot/memorialcareServicesDesktop-spec-report.png (deflated 4%)
 Email sent: 250 OK , completed
