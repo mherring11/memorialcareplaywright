@@ -1,0 +1,17 @@
+node:net:1903
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use ::1:9323
+    at Server.setupListenHandle [as _listen2] (node:net:1903:16)
+    at listenInCluster (node:net:1960:12)
+    at GetAddrInfoReqWrap.callback (node:net:2166:7)
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:132:8) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::1',
+  port: 9323
+}
+
+Node.js v22.8.0
