@@ -1,4 +1,3 @@
-# Use an official Node.js image as a base image
 FROM node:20-buster
 
 # Install required system libraries to run Playwright browsers
@@ -9,6 +8,22 @@ RUN apt-get update && apt-get install -y \
     libsecret-1-0 \
     libmanette-0.2-0 \
     libgles2-mesa \
+    gstreamer1.0-plugins-base \
+    gstreamer1.0-plugins-good \
+    gstreamer1.0-plugins-ugly \
+    gstreamer1.0-libav \
+    libnss3 \
+    libatk1.0-0 \
+    libatk-bridge2.0-0 \
+    libcups2 \
+    libxcomposite1 \
+    libxdamage1 \
+    libxrandr2 \
+    libgbm-dev \
+    libasound2 \
+    libpangocairo-1.0-0 \
+    libxshmfence-dev \
+    libxkbcommon0 \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory inside the container
@@ -26,9 +41,8 @@ RUN npx playwright install
 # Copy the rest of the application files to the working directory
 COPY . .
 
-# Expose the port the app runs on (ensure this matches your server.js port)
+# Expose the port the app runs on
 EXPOSE 10000
 
 # Start the Node.js application
 CMD [ "npm", "start" ]
-
