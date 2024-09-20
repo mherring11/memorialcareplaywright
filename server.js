@@ -6,48 +6,52 @@ const fs = require('fs');
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.use(express.json()); 
+
 app.get('/', (req, res) => {
   res.status(200).send('Server is up and running!');
 });
 
-app.get('/run-test/:testName', (req, res) => {
-    const testName = req.params.testName;
-    const scriptPath = path.join(__dirname, 'runTestAndCapture.sh');
-  
-    console.log(`Executing script: ${scriptPath} with test: ${testName}`);
+app.post('/run-test', (req, res) => {
+  const testName = req.body.testName;
 
-    const logFile = path.join(__dirname, 'test-log.txt');
-    fs.appendFileSync(logFile, `\n\n--- Running test: ${testName} at ${new Date()} ---\n`);
-  
-    exec(`bash ${scriptPath} ${testName}`, (error, stdout, stderr) => {
-      let responseMessage = '';
+  if (!testName) {
+    return res.status(400).send({ error: 'Test name is required' });
+  }
 
-      if (error) {
-        console.error(`Error executing script: ${error.message}`);
-        fs.appendFileSync(logFile, `Error: ${error.message}\n`);
-        responseMessage += `Error: ${error.message}\n`;
-        return res.status(500).send('Failed to trigger test.');
-      }
-  
-      if (stdout) {
-        console.log(`stdout: ${stdout}`);
-        fs.appendFileSync(logFile, `stdout: ${stdout}\n`);
-        responseMessage += `stdout: ${stdout}\n`;
-      } else {
-        fs.appendFileSync(logFile, "No stdout output\n");
-        responseMessage += 'No stdout output\n';
-      }
-  
-      if (stderr) {
-        console.error(`stderr: ${stderr}`);
-        fs.appendFileSync(logFile, `stderr: ${stderr}\n`);
-        responseMessage += `stderr: ${stderr}\n`;
-      } else {
-        fs.appendFileSync(logFile, "No stderr output\n");
-        responseMessage += 'No stderr output\n';
-      }
-      res.send(`Test script for ${testName} launched successfully.\n\nOutput: ${responseMessage}`);
-    });
+  const scriptPath = path.join(__dirname, 'runTestAndCapture.sh');
+
+  fs.chmodSync(scriptPath, '755');
+
+  console.log(`Executing script: ${scriptPath} with test: ${testName}`);
+
+  const logFile = path.join(__dirname, 'test-log.txt');
+  fs.appendFileSync(logFile, `\n\n--- Running test: ${testName} at ${new Date()} ---\n`);
+
+  exec(`bash ${scriptPath} ${testName}`, (error, stdout, stderr) => {
+    let responseMessage = '';
+
+    if (error) {
+      console.error(`Error executing script: ${error.message}`);
+      fs.appendFileSync(logFile, `Error: ${error.message}\n`);
+      responseMessage += `Error: ${error.message}\n`;
+      return res.status(500).send({ error: `Failed to execute test ${testName}`, details: error.message });
+    }
+
+    if (stdout) {
+      console.log(`stdout: ${stdout}`);
+      fs.appendFileSync(logFile, `stdout: ${stdout}\n`);
+      responseMessage += `stdout: ${stdout}\n`;
+    }
+
+    if (stderr) {
+      console.error(`stderr: ${stderr}`);
+      fs.appendFileSync(logFile, `stderr: ${stderr}\n`);
+      responseMessage += `stderr: ${stderr}\n`;
+    }
+
+    res.send(`Test ${testName} executed successfully.\n\nOutput: ${responseMessage}`);
+  });
 });
 
 app.listen(port, () => {
