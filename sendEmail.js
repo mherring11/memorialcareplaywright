@@ -2,13 +2,14 @@ const nodemailer = require('nodemailer');
 const path = require('path');
 const fs = require('fs');
 
+const testResult = process.argv[2]; 
+
 async function sendEmail() {
     let transporter = nodemailer.createTransport({
         service: 'yahoo',
         auth: {
           user: 'm.herring11@yahoo.com', 
           pass: 'imtifprmzfhyveow'  
-      
         }
     });
 
@@ -21,8 +22,8 @@ async function sendEmail() {
     let mailOptions = {
         from: 'm.herring11@yahoo.com',
         to: 'mherring@clickherelabs.com',
-        subject: 'Playwright Test Screenshots',
-        text: 'Attached are the screenshots from the latest Playwright test.',
+        subject: `Playwright Test Result: ${testResult}`,
+        text: `Attached are the screenshots from the latest Playwright test. The test result is: ${testResult}.`,
         attachments: files
     };
 

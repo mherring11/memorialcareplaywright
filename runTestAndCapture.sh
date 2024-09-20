@@ -18,7 +18,13 @@ do
   echo "Generating output directory: $OUTPUT_DIR"
 
   echo "Running test: $TEST_FILE"
-  npx playwright test tests/$TEST_FILE --reporter=html --output=results/$OUTPUT_DIR.html
+  if npx playwright test tests/$TEST_FILE --reporter=html --output=results/$OUTPUT_DIR.html; then
+    echo "Test passed."
+    TEST_RESULT="SUCCESS"
+  else
+    echo "Test failed."
+    TEST_RESULT="FAILURE"
+  fi
 
   echo "Opening report..."
   npx playwright show-report &
@@ -35,7 +41,7 @@ done
 echo "Zipping results..."
 zip -r results/testResultsScreenshot.zip results/testResultsScreenshot/
 
-echo "Sending email..."
-node sendEmail.js
+echo "Sending email with result: $TEST_RESULT"
+node sendEmail.js $TEST_RESULT
 
 echo "Script finished."
