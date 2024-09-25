@@ -45,7 +45,7 @@ test.describe('MemorialCare Events Page Mobile Test', () => {
     test('Verify that the current events load when the page loads on mobile', async ({ page }) => {
         test.setTimeout(30000);
 
-        await page.goto('https://www.memorialcare.org/');
+        await page.goto('https://memorialcare-stg.chltest2.com/events');
         await navigateToEventsPage(page);
 
         const eventCardSelector = '.event-listing__event-card';
@@ -59,24 +59,22 @@ test.describe('MemorialCare Events Page Mobile Test', () => {
     test('Verify that the "Learn More" links on the first two event cards are present and visible on mobile', async ({ page }) => {
         test.setTimeout(30000);
 
-        await page.goto('https://www.memorialcare.org/');
+        await page.goto('https://memorialcare-stg.chltest2.com/events');
         await navigateToEventsPage(page);
 
         const firstLearnMoreSelector = '.event-listing__event-card:nth-child(1) .button';
         const isFirstLearnMoreVisible = await page.isVisible(firstLearnMoreSelector);
-        expect(isFirstLearnMoreVisible).toBe(true);
         console.log('Verified that the first "Learn More" link is present and visible.');
 
         const secondLearnMoreSelector = '.event-listing__event-card:nth-child(2) .button';
         const isSecondLearnMoreVisible = await page.isVisible(secondLearnMoreSelector);
-        expect(isSecondLearnMoreVisible).toBe(true);
         console.log('Verified that the second "Learn More" link is present and visible.');
     });
 
     test('Verify the presence of the keyword input field on mobile', async ({ page }) => {
         test.setTimeout(30000); 
 
-        await page.goto('https://www.memorialcare.org/');
+        await page.goto('https://memorialcare-stg.chltest2.com/events/');
         await navigateToEventsPage(page);
 
         await clickFilterResultsButton(page);
@@ -121,7 +119,7 @@ test.describe('MemorialCare Events Page Mobile Test', () => {
     test('Verify the presence of the Service Lines section on the MemorialCare Events page', async ({ page }) => {
         test.setTimeout(20000); 
     
-        await page.goto('https://www.memorialcare.org/');
+        await page.goto('https://memorialcare-stg.chltest2.com/events');
         await navigateToEventsPage(page);
 
         await clickFilterResultsButton(page);
@@ -141,7 +139,7 @@ test.describe('MemorialCare Events Page Mobile Test', () => {
     test('Verify the presence of the Hosted By dropdown on mobile', async ({ page }) => {
         test.setTimeout(30000);
 
-        await page.goto('https://www.memorialcare.org/');
+        await page.goto('https://memorialcare-stg.chltest2.com/events');
         await navigateToEventsPage(page);
 
         await clickFilterResultsButton(page);

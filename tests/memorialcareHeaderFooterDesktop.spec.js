@@ -3,21 +3,18 @@ const { test, expect } = require('@playwright/test');
 test.describe('MemorialCare Website Header and Footer Test', () => {
     let context;
     let page;
-    const baseUrl = 'https://www.memorialcare.org';
+    const baseUrl = 'https://memorialcare-stg.chltest2.com/';
 
-    // Create a new context and page for each test to ensure isolation
     test.beforeEach(async ({ browser }) => {
         context = await browser.newContext();
         page = await context.newPage();
     });
 
-    // Close context after each test to free up resources
     test.afterEach(async () => {
         await page.close();
         await context.close();
     });
 
-    // Helper function to ensure page load and key element visibility
     async function ensurePageLoadAndVisibility(selector, url = baseUrl) {
         await page.goto(url, { waitUntil: 'networkidle' });
         console.log(`Navigated to: ${url}`);
@@ -52,12 +49,10 @@ test.describe('MemorialCare Website Header and Footer Test', () => {
 
         for (const link of links) {
             try {
-                // If the link is a telephone link or a search link, just verify visibility
                 if (link.expectedUrl.startsWith('tel') || link.expectedUrl === '/search') {
                     await page.waitForSelector(link.selector, { state: 'visible', timeout: 10000 });
                     console.log(`Verified presence of link: ${link.selector}`);
                 } else {
-                    // Click the link and verify the navigation
                     await page.click(link.selector);
                     console.log(`Clicked on link: ${link.selector}`);
 
@@ -66,7 +61,6 @@ test.describe('MemorialCare Website Header and Footer Test', () => {
                     expect(currentUrl).toContain(link.expectedUrl);
                     console.log(`Verified navigation to: ${currentUrl}`);
 
-                    // Navigate back to the main page
                     await ensurePageLoadAndVisibility('header.site-header');
                 }
             } catch (error) {

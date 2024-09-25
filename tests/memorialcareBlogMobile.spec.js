@@ -8,7 +8,7 @@ test.describe('MemorialCare Blog Tests - Mobile View', () => {
 
     test.beforeAll(async ({ browser }) => {
         page = await browser.newPage();
-        await page.goto('https://www.memorialcare.org/blog', { waitUntil: 'domcontentloaded' });
+        await page.goto('https://memorialcare-stg.chltest2.com/blog', { waitUntil: 'domcontentloaded' });
         await page.waitForLoadState('networkidle');
         console.log('Page loaded with network idle state at https://www.memorialcare.org/blog');
     });

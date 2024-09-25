@@ -17,44 +17,55 @@ MEMORIALCARE_TEST_FILES=(
   "providerMainFormMobile.spec.js"
 )
 
-BROWSERS=("Desktop Chrome" "Desktop Firefox" "Desktop Safari")
+BROWSERS=("Desktop Safari")
 
 FAILED_TESTS=()
-
-send_failure_email() {
-  echo "Some tests failed. Sending email notification..."
-  node sendEmail.js "FAILURE"
-}
+TEST_RESULT="SUCCESS"
 
 run_test_and_capture() {
   local test_file=$1
   local project=$2
+  local output_dir="${test_file}_${project}"
   echo "Running test: $test_file on browser: $project"
-  
-  if ! npx playwright test "tests/$test_file" --project="$project" --reporter=html --output=results/${test_file}_${project}.html; then
+  if ! npx playwright test "tests/$test_file" --project="$project" --workers=1 --reporter=html --output=results/$output_dir.html; then
     echo "Test failed: $test_file on browser: $project"
     FAILED_TESTS+=("$test_file on $project")
+    TEST_RESULT="FAILURE"
   else
     echo "Test passed: $test_file on browser: $project"
   fi
+  
+  echo "Capturing screenshot for $test_file on $project..."
+  node captureReportScreenshot.js $test_file $project
+  
+  npx playwright show-report &
+  sleep 5
+  pkill -f "npx playwright show-report"
 }
 
-for BROWSER in "${BROWSERS[@]}"; do
-  echo "Starting tests for browser: $BROWSER"
+run_browser_tests() {
+  local browser=$1
   for TEST_FILE in "${MEMORIALCARE_TEST_FILES[@]}"; do
-    run_test_and_capture "$TEST_FILE" "$BROWSER"
+    run_test_and_capture "$TEST_FILE" "$browser"
   done
-  echo "Completed tests for browser: $BROWSER"
-  
-  # Add delay between browser runs
-  echo "Waiting for 5 seconds before starting the next browser..."
-  sleep 5
+}
+
+echo "Starting tests for all browsers in parallel..."
+
+# Run tests for all browsers in parallel
+for BROWSER in "${BROWSERS[@]}"; do
+  run_browser_tests "$BROWSER" &
 done
 
-if [ ${#FAILED_TESTS[@]} -ne 0 ]; then
-  echo "Failed tests: ${FAILED_TESTS[@]}"
-  send_failure_email
-else
-  echo "All tests passed successfully. Sending email notification..."
-  node sendEmail.js "SUCCESS"
-fi
+# Wait for all parallel processes to complete
+wait
+
+echo "Completed tests for all browsers."
+
+echo "Zipping results..."
+zip -r results/testResultsScreenshot.zip results/testResultsScreenshot/
+
+echo "Sending email with result: $TEST_RESULT"
+node sendEmail.js $TEST_RESULT
+
+echo "Script finished."

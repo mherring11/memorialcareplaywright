@@ -5,15 +5,13 @@ test.use({ viewport: { width: 375, height: 812 } });
 test.describe('MemorialCare Mobile Header and Footer Tests', () => {
     let context;
     let page;
-    const baseUrl = 'https://www.memorialcare.org';
+    const baseUrl = 'https://memorialcare-stg.chltest2.com/';
 
-    // Create a new context and page for each test to ensure isolation
     test.beforeEach(async ({ browser }) => {
         context = await browser.newContext();
         page = await context.newPage();
     });
 
-    // Close context after each test to free up resources
     test.afterEach(async () => {
         await page.close();
         await context.close();

@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-const url = 'https://www.memorialcare.org/blog';
+const url = 'https://memorialcare-stg.chltest2.com/blog';
 
 test.describe('MemorialCare Blog Tests', () => {
 

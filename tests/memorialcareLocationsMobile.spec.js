@@ -6,7 +6,7 @@ test.describe('MemorialCare Locations Radius Options Test - Mobile View', () => 
     test('Verify all radius options are present for zip code 90806', async ({ page }) => {
         test.setTimeout(60000);
 
-        const url = 'https://www.memorialcare.org/locations';
+        const url = 'https://memorialcare-stg.chltest2.com/locations';
         await page.goto(url);
         console.log('Navigated to locations page');
 

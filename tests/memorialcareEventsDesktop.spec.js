@@ -4,13 +4,11 @@ test.describe('MemorialCare Events Page Test', () => {
     let context;
     let page;
 
-    // Create a new context and page for each test to ensure isolation
     test.beforeEach(async ({ browser }) => {
         context = await browser.newContext();
         page = await context.newPage();
     });
 
-    // Close context after each test to free up resources
     test.afterEach(async () => {
         await page.close();
         await context.close();
@@ -19,7 +17,7 @@ test.describe('MemorialCare Events Page Test', () => {
     test('Verify that the current events load when the page loads', async () => {
         test.setTimeout(90000);
        
-        await page.goto('https://www.memorialcare.org/events', { waitUntil: 'networkidle' });
+        await page.goto('https://memorialcare-stg.chltest2.com/events', { waitUntil: 'networkidle' });
         console.log('Navigated to MemorialCare events page');
 
         const eventCardSelector = '.event-listing__event-card';
@@ -31,7 +29,7 @@ test.describe('MemorialCare Events Page Test', () => {
     });
 
     test('Verify that the "Learn More" links on the first two event cards are present and visible', async () => {
-        await page.goto('https://www.memorialcare.org/events', { waitUntil: 'networkidle' });
+        await page.goto('https://memorialcare-stg.chltest2.com/events', { waitUntil: 'networkidle' });
         console.log('Navigated to MemorialCare events page');
     
         const eventCardSelector = '.event-listing__event-card';
@@ -49,7 +47,7 @@ test.describe('MemorialCare Events Page Test', () => {
     });
 
     test('Verify that the keyword filter input is present and visible', async () => {
-        await page.goto('https://www.memorialcare.org/events', { waitUntil: 'networkidle' });
+        await page.goto('https://memorialcare-stg.chltest2.com/events', { waitUntil: 'networkidle' });
         console.log('Navigated to MemorialCare events page');
 
         const keywordInputSelector = 'input[data-drupal-selector="edit-aggregated-field"]';
@@ -60,7 +58,7 @@ test.describe('MemorialCare Events Page Test', () => {
     });
 
     test('Verify that the Event Date min/max inputs are present and visible', async () => {
-        await page.goto('https://www.memorialcare.org/events', { waitUntil: 'networkidle' });
+        await page.goto('https://memorialcare-stg.chltest2.com/events', { waitUntil: 'networkidle' });
         console.log('Navigated to MemorialCare events page');
     
         const minDateInputSelector = 'input[data-drupal-selector="edit-date-range-min"] + input';
@@ -76,7 +74,7 @@ test.describe('MemorialCare Events Page Test', () => {
     });    
 
     test('Verify presence of Service Line block', async () => {
-        await page.goto('https://www.memorialcare.org/events', { waitUntil: 'networkidle' });
+        await page.goto('https://memorialcare-stg.chltest2.com/events', { waitUntil: 'networkidle' });
         console.log('Navigated to MemorialCare events page');
     
         const serviceLineBlockSelector = '#block-revent-service-lines';
@@ -87,7 +85,7 @@ test.describe('MemorialCare Events Page Test', () => {
     });
     
     test('Verify presence of Category block', async () => {
-        await page.goto('https://www.memorialcare.org/events', { waitUntil: 'networkidle' });
+        await page.goto('https://memorialcare-stg.chltest2.com/events', { waitUntil: 'networkidle' });
         console.log('Navigated to MemorialCare events page');
     
         const categoryBlockSelector = '#block-revent-category';
@@ -98,7 +96,7 @@ test.describe('MemorialCare Events Page Test', () => {
     });
     
     test('Verify presence of Hosted By block', async () => {
-        await page.goto('https://www.memorialcare.org/events', { waitUntil: 'networkidle' });
+        await page.goto('https://memorialcare-stg.chltest2.com/events', { waitUntil: 'networkidle' });
         console.log('Navigated to MemorialCare events page');
     
         const hostedByBlockSelector = '#block-revent-hosted-by';

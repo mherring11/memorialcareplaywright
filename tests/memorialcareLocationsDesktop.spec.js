@@ -4,20 +4,28 @@ test.describe('MemorialCare Locations Page Tests', () => {
     let context;
     let page;
 
-    // Create a new context and page for each test to ensure isolation
-    test.beforeEach(async ({ browser }) => {
+    test.beforeEach(async ({ browser, browserName }) => {
+        if (browserName === 'chromium') {
+            test.skip('This test does not run on Chrome.');
+        }
         context = await browser.newContext();
         page = await context.newPage();
     });
 
-    // Close context after each test to free up resources
     test.afterEach(async () => {
-        await page.close();
-        await context.close();
+        if (page) {
+            await page.close();
+        }
+        if (context) {
+            await context.close();
+        }
     });
 
-    test('Verify that the map loads', async () => {
-        const url = 'https://www.memorialcare.org/locations';
+    test('Verify that the map loads', async ({ browserName }) => {
+        if (browserName === 'chromium') {
+            test.skip('This test does not run on Chrome.');
+        }
+        const url = 'https://memorialcare-stg.chltest2.com/locations';
         await page.goto(url, { waitUntil: 'domcontentloaded' });
         console.log('Navigated to locations page');
 
@@ -30,8 +38,11 @@ test.describe('MemorialCare Locations Page Tests', () => {
         console.log('Verified that the map is loaded and visible');
     });
 
-    test('Verify zip code search with California and non-California zip codes', async () => {
-        const url = 'https://www.memorialcare.org/locations';
+    test('Verify zip code search with California and non-California zip codes', async ({ browserName }) => {
+        if (browserName === 'chromium') {
+            test.skip('This test does not run on Chrome.');
+        }
+        const url = 'https://memorialcare-stg.chltest2.com/locations';
         await page.goto(url, { waitUntil: 'domcontentloaded' });
         console.log('Navigated to locations page');
 
@@ -65,8 +76,11 @@ test.describe('MemorialCare Locations Page Tests', () => {
         }
     });
 
-    test('Verify specific map pin connects to the correct detail record', async () => {
-        const url = 'https://www.memorialcare.org/locations';
+    test('Verify specific map pin connects to the correct detail record', async ({ browserName }) => {
+        if (browserName === 'chromium') {
+            test.skip('This test does not run on Chrome.');
+        }
+        const url = 'https://memorialcare-stg.chltest2.com/locations';
         await page.goto(url, { waitUntil: 'domcontentloaded' });
         console.log('Navigated to locations page');
 
@@ -94,8 +108,11 @@ test.describe('MemorialCare Locations Page Tests', () => {
         }
     });
 
-    test('Verify radius filter functions correctly for zip code 90806', async () => {
-        const url = 'https://www.memorialcare.org/locations';
+    test('Verify radius filter functions correctly for zip code 90806', async ({ browserName }) => {
+        if (browserName === 'chromium') {
+            test.skip('This test does not run on Chrome.');
+        }
+        const url = 'https://memorialcare-stg.chltest2.com/locations';
         await page.goto(url, { waitUntil: 'domcontentloaded' });
         console.log('Navigated to locations page');
 
@@ -135,8 +152,11 @@ test.describe('MemorialCare Locations Page Tests', () => {
         }
     });
 
-    test('Verify "View Details" link opens the correct location details', async () => {
-        const url = 'https://www.memorialcare.org/locations';
+    test('Verify "View Details" link opens the correct location details', async ({ browserName }) => {
+        if (browserName === 'chromium') {
+            test.skip('This test does not run on Chrome.');
+        }
+        const url = 'https://memorialcare-stg.chltest2.com/locations';
         await page.goto(url, { waitUntil: 'domcontentloaded' });
         console.log('Navigated to locations page');
 
@@ -167,8 +187,11 @@ test.describe('MemorialCare Locations Page Tests', () => {
         console.log(`Navigated to the correct location details page: ${currentUrl}`);
     });
 
-    test('Verify "View on Map" function links to the correct map pin', async () => {
-        const url = 'https://www.memorialcare.org/locations';
+    test('Verify "View on Map" function links to the correct map pin', async ({ browserName }) => {
+        if (browserName === 'chromium') {
+            test.skip('This test does not run on Chrome.');
+        }
+        const url = 'https://memorialcare-stg.chltest2.com/locations';
         await page.goto(url, { waitUntil: 'domcontentloaded' });
         console.log('Navigated to locations page');
 

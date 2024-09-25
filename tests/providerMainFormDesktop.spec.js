@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-const url = 'https://www.memorialcare.org/providers';
+const url = 'https://memorialcare-stg.chltest2.com/providers';
 
 test.describe('MemorialCare Provider Tests', () => {
 

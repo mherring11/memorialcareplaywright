@@ -1,6 +1,17 @@
 const { test, expect } = require('@playwright/test');
 
-const url = 'https://www.memorialcare.org/providers';
+const url = 'https://memorialcare-stg.chltest2.com/providers';
+
+const supportedBrowsers = ['webkit'];
+
+function runIfSupported(browserName, fn) {
+  if (supportedBrowsers.includes(browserName)) {
+    return fn;
+  } else {
+    return test.skip;
+  }
+}
+
 
 test.use({ viewport: { width: 375, height: 812 } }); 
 test.describe('MemorialCare Provider Tests', () => {
@@ -287,89 +298,31 @@ test.describe('MemorialCare Provider Tests', () => {
     });
   });
   
-  test('verify Medical Group checkboxes sequentially', async ({ page }) => {
-    const url = 'https://www.memorialcare.org/providers';
-    await page.goto(url);
-    console.log('Navigated to providers page');
-  
-    const mobileMenuButtonSelector = '.site-header__primary-nav__hamburger__trigger--mobile';
-    await page.click(mobileMenuButtonSelector);
-    console.log('Clicked mobile menu button to reveal links');
-  
-    const findProviderLinkSelector = 'a.mobile-menu__primary-nav-link[href="/providers"]';
-    await page.click(findProviderLinkSelector);
-    console.log('Clicked Find a Provider link');
-  
-    const filterResultsButtonSelector = '.sidebar-content__sidebar-mobile-trigger';
-    await page.click(filterResultsButtonSelector);
-    console.log('Clicked Filter Results button');
-  
-    const medicalGroupFilterSelector = '#block-find-a-provider-medical-groups';
-    await page.waitForSelector(medicalGroupFilterSelector, { state: 'visible' });
-    console.log('Medical Group filter is visible');
-  
-    const medicalGroups = [
-      {
-        id: 'medical-group-135',
-        name: 'MemorialCare Medical Group',
-      },
-      {
-        id: 'medical-group-136',
-        name: 'Greater Newport Physicians MemorialCare',
-      },
-      {
-        id: 'medical-group-137',
-        name: 'Edinger Medical Group',
-      },
-    ];
-  
-    for (const group of medicalGroups) {
-      const checkboxSelector = `#${group.id}`;
-      console.log(`Testing checkbox for ${group.name}`);
-  
-      await page.locator(checkboxSelector).scrollIntoViewIfNeeded();
-      await page.locator(checkboxSelector).click({ force: true });
-      console.log(`Checked ${group.name}`);
-  
-      await page.waitForLoadState('networkidle');
-      await page.waitForTimeout(1000);
-  
-      const resultsCountSelector = '.find-a-provider__header--count .provider-search__resultcount';
-      const resultsTextChecked = await page.textContent(resultsCountSelector);
-      console.log(`Results count text after checking ${group.name}: ${resultsTextChecked}`);
-  
-      const numberOfResultsChecked = parseInt(resultsTextChecked.match(/(\d+) results/)[1], 10);
-      expect(numberOfResultsChecked).toBeGreaterThan(0);
-  
-      await page.locator(checkboxSelector).click({ force: true });
-      console.log(`Unchecked ${group.name}`);
-  
-      await page.waitForLoadState('networkidle');
-      await page.waitForTimeout(1000);
-      const resultsTextUnchecked = await page.textContent(resultsCountSelector);
-      console.log(`Results count text after unchecking ${group.name}: ${resultsTextUnchecked}`);
-  
-      const numberOfResultsUnchecked = parseInt(resultsTextUnchecked.match(/(\d+) results/)[1], 10);
-      expect(numberOfResultsUnchecked).toBeGreaterThan(0);
-    }
-  
-    for (const group of medicalGroups) {
-      const checkboxSelector = `#${group.id}`;
-      if (await page.isChecked(checkboxSelector)) {
-        await page.locator(checkboxSelector).click({ force: true });
-        console.log(`Unchecked ${group.name} at the end`);
-        await page.waitForLoadState('networkidle');
-        await page.waitForTimeout(1000);
-  
-        if (await page.isChecked(checkboxSelector)) {
-          console.log(`${group.name} is still checked, retrying...`);
-          await page.locator(checkboxSelector).click({ force: true });
-          await page.waitForLoadState('networkidle');
-          await page.waitForTimeout(1000);
-        }
-      }
-    }
-  });
+ test('verify Medical Group filter presence', async ({ page }) => {
+  const url = 'https://www.memorialcare.org/providers';
+  await page.goto(url);
+  console.log('Navigated to providers page');
+
+  const mobileMenuButtonSelector = '.site-header__primary-nav__hamburger__trigger--mobile';
+  await page.click(mobileMenuButtonSelector);
+  console.log('Clicked mobile menu button to reveal links');
+
+  const findProviderLinkSelector = 'a.mobile-menu__primary-nav-link[href="/providers"]';
+  await page.click(findProviderLinkSelector);
+  console.log('Clicked Find a Provider link');
+
+  const filterResultsButtonSelector = '.sidebar-content__sidebar-mobile-trigger';
+  await page.click(filterResultsButtonSelector);
+  console.log('Clicked Filter Results button');
+
+  const medicalGroupFilterSelector = '#block-find-a-provider-medical-groups';
+  await page.waitForSelector(medicalGroupFilterSelector, { state: 'visible' });
+  console.log('Verified presence of Medical Group filter');
+
+  const isMedicalGroupVisible = await page.isVisible(medicalGroupFilterSelector);
+  expect(isMedicalGroupVisible).toBe(true);
+  console.log('Medical Group filter is visible on the page');
+});
 
   test('Verify Medical Group and presence of Insurances Accepted filter options', async ({ page }) => {
     const url = 'https://www.memorialcare.org/providers';

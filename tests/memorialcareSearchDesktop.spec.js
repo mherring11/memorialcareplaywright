@@ -14,7 +14,7 @@ test.describe('MemorialCare Site Search Functionality', () => {
 });
 
 async function performSearchAndVerify(page, searchTerm) {
-    const url = 'https://www.memorialcare.org/search';
+    const url = 'https://memorialcare-stg.chltest2.com/search';
     await page.goto(url);
     console.log(`Navigated to MemorialCare search page for term: ${searchTerm}`);
 

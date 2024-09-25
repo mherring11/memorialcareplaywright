@@ -5,7 +5,7 @@ test.describe('MemorialCare Services Alphabetical Filter Tests', () => {
   test('Verify the presence of alphabet letters for service selection on mobile', async ({ page }) => {
     test.setTimeout(150000);
 
-    const url = 'https://www.memorialcare.org/services';
+    const url = 'https://memorialcare-stg.chltest2.com/services';
     await page.goto(url);
     console.log('Navigated to MemorialCare Services page');
 
@@ -25,7 +25,7 @@ test.describe('MemorialCare Services Alphabetical Filter Tests', () => {
   test('Verify the first condition selector functions correctly', async ({ page }) => {
     test.setTimeout(150000);
 
-    const url = 'https://www.memorialcare.org/services';
+    const url = 'https://memorialcare-stg.chltest2.com/services';
     await page.goto(url);
     console.log('Navigated to MemorialCare Services page');
 
@@ -53,7 +53,7 @@ test.describe('MemorialCare Services Alphabetical Filter Tests', () => {
     test('Verify the first location selector functions correctly', async ({ page }) => {
         test.setTimeout(150000);
     
-        const url = 'https://www.memorialcare.org/services';
+        const url = 'https://memorialcare-stg.chltest2.com/services';
         await page.goto(url);
         console.log('Navigated to MemorialCare Services page');
 
@@ -81,7 +81,7 @@ test.describe('MemorialCare Services Alphabetical Filter Tests', () => {
     test('Verify that the search form functions correctly', async ({ page }) => {
         test.setTimeout(150000);
     
-        const url = 'https://www.memorialcare.org/services';
+        const url = 'https://memorialcare-stg.chltest2.com/services';
         await page.goto(url);
         console.log('Navigated to MemorialCare Services page');
    
