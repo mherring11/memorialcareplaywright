@@ -86,20 +86,20 @@
   },
   "suites": [
     {
-      "title": "tests/memorialcareEventsMobile.spec.js",
-      "file": "tests/memorialcareEventsMobile.spec.js",
+      "title": "tests/memorialcareLocationsDesktop.spec.js",
+      "file": "tests/memorialcareLocationsDesktop.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "MemorialCare Events Page Mobile Test",
-          "file": "tests/memorialcareEventsMobile.spec.js",
-          "line": 5,
+          "title": "MemorialCare Locations Page Tests",
+          "file": "tests/memorialcareLocationsDesktop.spec.js",
+          "line": 3,
           "column": 6,
           "specs": [
             {
-              "title": "Verify that the current events load when the page loads on mobile",
+              "title": "Verify that the map loads",
               "ok": true,
               "tags": [],
               "tests": [
@@ -111,37 +111,99 @@
                   "projectName": "Desktop Chrome",
                   "results": [
                     {
-                      "workerIndex": 31,
+                      "workerIndex": 77,
                       "status": "passed",
-                      "duration": 4611,
+                      "duration": 2338,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Clicked on the hamburger button to open the mobile menu\n"
+                          "text": "Navigated to locations page\n"
                         },
                         {
-                          "text": "Clicked on the Events button in the mobile menu\n"
+                          "text": "Map is visible on the page\n"
                         },
                         {
-                          "text": "Verified that 10 event(s) are loaded on the page.\n"
+                          "text": "Verified that the map is loaded and visible\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-09-20T20:40:27.297Z",
+                      "startTime": "2024-09-23T19:22:05.020Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Safari",
+                  "projectName": "Desktop Safari",
+                  "results": [
+                    {
+                      "workerIndex": 78,
+                      "status": "passed",
+                      "duration": 2739,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Map is visible on the page\n"
+                        },
+                        {
+                          "text": "Verified that the map is loaded and visible\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-23T19:22:48.316Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Firefox",
+                  "projectName": "Desktop Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 79,
+                      "status": "passed",
+                      "duration": 2680,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Map is visible on the page\n"
+                        },
+                        {
+                          "text": "Verified that the map is loaded and visible\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-23T19:23:19.395Z",
                       "attachments": []
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "03c86bedec7fd5afb64a-66cb24c1f81cee9079c0",
-              "file": "tests/memorialcareEventsMobile.spec.js",
-              "line": 45,
+              "id": "cefbd44b4562531e4678-d20e6fc180a8c12c37e6",
+              "file": "tests/memorialcareLocationsDesktop.spec.js",
+              "line": 19,
               "column": 5
             },
             {
-              "title": "Verify that the \"Learn More\" links on the first two event cards are present and visible on mobile",
+              "title": "Verify zip code search with California and non-California zip codes",
               "ok": true,
               "tags": [],
               "tests": [
@@ -153,40 +215,189 @@
                   "projectName": "Desktop Chrome",
                   "results": [
                     {
-                      "workerIndex": 31,
+                      "workerIndex": 77,
                       "status": "passed",
-                      "duration": 1468,
+                      "duration": 5438,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Clicked on the hamburger button to open the mobile menu\n"
+                          "text": "Navigated to locations page\n"
                         },
                         {
-                          "text": "Clicked on the Events button in the mobile menu\n"
+                          "text": "Entered zip code: 90806\n"
                         },
                         {
-                          "text": "Verified that the first \"Learn More\" link is present and visible.\n"
+                          "text": "Pressed Enter to select the suggested city\n"
                         },
                         {
-                          "text": "Verified that the second \"Learn More\" link is present and visible.\n"
+                          "text": "Clicked the \"Filter Results\" button\n"
+                        },
+                        {
+                          "text": "Number of results found: 200\n"
+                        },
+                        {
+                          "text": "Entered zip code: 92708\n"
+                        },
+                        {
+                          "text": "Pressed Enter to select the suggested city\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button\n"
+                        },
+                        {
+                          "text": "Number of results found: 200\n"
+                        },
+                        {
+                          "text": "Entered zip code: 32412\n"
+                        },
+                        {
+                          "text": "Pressed Enter to select the suggested city\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button\n"
+                        },
+                        {
+                          "text": "Number of results found: 200\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-09-20T20:40:31.970Z",
+                      "startTime": "2024-09-23T19:22:08.621Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Safari",
+                  "projectName": "Desktop Safari",
+                  "results": [
+                    {
+                      "workerIndex": 78,
+                      "status": "passed",
+                      "duration": 2770,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Entered zip code: 90806\n"
+                        },
+                        {
+                          "text": "Pressed Enter to select the suggested city\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button\n"
+                        },
+                        {
+                          "text": "Number of results found: 200\n"
+                        },
+                        {
+                          "text": "Entered zip code: 92708\n"
+                        },
+                        {
+                          "text": "Pressed Enter to select the suggested city\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button\n"
+                        },
+                        {
+                          "text": "Number of results found: 200\n"
+                        },
+                        {
+                          "text": "Entered zip code: 32412\n"
+                        },
+                        {
+                          "text": "Pressed Enter to select the suggested city\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button\n"
+                        },
+                        {
+                          "text": "Number of results found: 200\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-23T19:22:51.537Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Firefox",
+                  "projectName": "Desktop Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 79,
+                      "status": "passed",
+                      "duration": 2830,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Entered zip code: 90806\n"
+                        },
+                        {
+                          "text": "Pressed Enter to select the suggested city\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button\n"
+                        },
+                        {
+                          "text": "Number of results found: 200\n"
+                        },
+                        {
+                          "text": "Entered zip code: 92708\n"
+                        },
+                        {
+                          "text": "Pressed Enter to select the suggested city\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button\n"
+                        },
+                        {
+                          "text": "Number of results found: 200\n"
+                        },
+                        {
+                          "text": "Entered zip code: 32412\n"
+                        },
+                        {
+                          "text": "Pressed Enter to select the suggested city\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button\n"
+                        },
+                        {
+                          "text": "Number of results found: 200\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-23T19:23:23.805Z",
                       "attachments": []
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "03c86bedec7fd5afb64a-43542e8c3c9ea6f3a5d6",
-              "file": "tests/memorialcareEventsMobile.spec.js",
-              "line": 59,
+              "id": "cefbd44b4562531e4678-ab40754b1f9458667a48",
+              "file": "tests/memorialcareLocationsDesktop.spec.js",
+              "line": 33,
               "column": 5
             },
             {
-              "title": "Verify the presence of the keyword input field on mobile",
+              "title": "Verify specific map pin connects to the correct detail record",
               "ok": true,
               "tags": [],
               "tests": [
@@ -198,46 +409,126 @@
                   "projectName": "Desktop Chrome",
                   "results": [
                     {
-                      "workerIndex": 31,
+                      "workerIndex": 77,
                       "status": "passed",
-                      "duration": 4823,
+                      "duration": 3930,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Clicked on the hamburger button to open the mobile menu\n"
+                          "text": "Navigated to locations page\n"
                         },
                         {
-                          "text": "Clicked on the Events button in the mobile menu\n"
+                          "text": "Map is visible\n"
                         },
                         {
-                          "text": "Clicked on the Filter Results button on attempt 1\n"
+                          "text": "Specific map pin is visible\n"
                         },
                         {
-                          "text": "Filter Results section is visible after clicking the button.\n"
+                          "text": "Clicked on the specific map pin to view details\n"
                         },
                         {
-                          "text": "Filter Results section is visible\n"
+                          "text": "Navigated to URL: https://www.memorialcare.org/locations/memorialcare-medical-group-huntington-beach\n"
                         },
                         {
-                          "text": "Verified that the keyword input field is present and visible.\n"
+                          "text": "Verified the correct detail page is displayed\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-09-20T20:40:33.443Z",
+                      "startTime": "2024-09-23T19:22:14.062Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Safari",
+                  "projectName": "Desktop Safari",
+                  "results": [
+                    {
+                      "workerIndex": 78,
+                      "status": "passed",
+                      "duration": 4420,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Map is visible\n"
+                        },
+                        {
+                          "text": "Specific map pin is visible\n"
+                        },
+                        {
+                          "text": "Clicked on the specific map pin to view details\n"
+                        },
+                        {
+                          "text": "Navigated to URL: https://www.memorialcare.org/locations/memorialcare-medical-group-huntington-beach\n"
+                        },
+                        {
+                          "text": "Verified the correct detail page is displayed\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-23T19:22:54.311Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Firefox",
+                  "projectName": "Desktop Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 79,
+                      "status": "passed",
+                      "duration": 3118,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Map is visible\n"
+                        },
+                        {
+                          "text": "Specific map pin is visible\n"
+                        },
+                        {
+                          "text": "Clicked on the specific map pin to view details\n"
+                        },
+                        {
+                          "text": "Navigated to URL: https://www.memorialcare.org/locations/memorialcare-medical-group-huntington-beach\n"
+                        },
+                        {
+                          "text": "Verified the correct detail page is displayed\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-23T19:23:26.640Z",
                       "attachments": []
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "03c86bedec7fd5afb64a-df9757c88520b04f738a",
-              "file": "tests/memorialcareEventsMobile.spec.js",
-              "line": 76,
+              "id": "cefbd44b4562531e4678-42c51bbf8a40ad31ba83",
+              "file": "tests/memorialcareLocationsDesktop.spec.js",
+              "line": 68,
               "column": 5
             },
             {
-              "title": "Verify that the Event Date min/max inputs are present and visible on mobile",
+              "title": "Verify radius filter functions correctly for zip code 90806",
               "ok": true,
               "tags": [],
               "tests": [
@@ -249,94 +540,252 @@
                   "projectName": "Desktop Chrome",
                   "results": [
                     {
-                      "workerIndex": 31,
+                      "workerIndex": 77,
                       "status": "passed",
-                      "duration": 2470,
+                      "duration": 17260,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Clicked on the hamburger button to open the mobile menu\n"
+                          "text": "Navigated to locations page\n"
                         },
                         {
-                          "text": "Clicked on the Events button in the mobile menu\n"
+                          "text": "Entered zip code: 90806\n"
                         },
                         {
-                          "text": "Clicked on the Filter Results button\n"
+                          "text": "Pressed Enter to select the suggested city\n"
                         },
                         {
-                          "text": "Filter Results section is visible\n"
+                          "text": "Clicked the \"Filter Results\" button\n"
                         },
                         {
-                          "text": "Verified that the Min date input is present and visible.\n"
+                          "text": "Number of results found: 200\n"
                         },
                         {
-                          "text": "Verified that the Max date input is present and visible.\n"
+                          "text": "Selected radius: 5 Miles\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button after selecting radius\n"
+                        },
+                        {
+                          "text": "Number of results found for 5 Miles: 200\n"
+                        },
+                        {
+                          "text": "Selected radius: 10 Miles\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button after selecting radius\n"
+                        },
+                        {
+                          "text": "Number of results found for 10 Miles: 200\n"
+                        },
+                        {
+                          "text": "Selected radius: 25 Miles\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button after selecting radius\n"
+                        },
+                        {
+                          "text": "Number of results found for 25 Miles: 200\n"
+                        },
+                        {
+                          "text": "Selected radius: 50 Miles\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button after selecting radius\n"
+                        },
+                        {
+                          "text": "Number of results found for 50 Miles: 200\n"
+                        },
+                        {
+                          "text": "Selected radius: 75 Miles\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button after selecting radius\n"
+                        },
+                        {
+                          "text": "Number of results found for 75 Miles: 200\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-09-20T20:40:38.273Z",
+                      "startTime": "2024-09-23T19:22:17.997Z",
                       "attachments": []
                     }
                   ],
                   "status": "expected"
-                }
-              ],
-              "id": "03c86bedec7fd5afb64a-e851d31e392327ff6e2e",
-              "file": "tests/memorialcareEventsMobile.spec.js",
-              "line": 94,
-              "column": 5
-            },
-            {
-              "title": "Verify the presence of the Service Lines section on the MemorialCare Events page",
-              "ok": true,
-              "tags": [],
-              "tests": [
+                },
                 {
-                  "timeout": 20000,
+                  "timeout": 30000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "Desktop Chrome",
-                  "projectName": "Desktop Chrome",
+                  "projectId": "Desktop Safari",
+                  "projectName": "Desktop Safari",
                   "results": [
                     {
-                      "workerIndex": 31,
+                      "workerIndex": 78,
                       "status": "passed",
-                      "duration": 4023,
+                      "duration": 13253,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Clicked on the hamburger button to open the mobile menu\n"
+                          "text": "Navigated to locations page\n"
                         },
                         {
-                          "text": "Clicked on the Events button in the mobile menu\n"
+                          "text": "Entered zip code: 90806\n"
                         },
                         {
-                          "text": "Clicked on the Filter Results button on attempt 1\n"
+                          "text": "Pressed Enter to select the suggested city\n"
                         },
                         {
-                          "text": "Filter Results section is visible after clicking the button.\n"
+                          "text": "Clicked the \"Filter Results\" button\n"
                         },
                         {
-                          "text": "Service Lines section is present and visible.\n"
+                          "text": "Number of results found: 200\n"
+                        },
+                        {
+                          "text": "Selected radius: 5 Miles\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button after selecting radius\n"
+                        },
+                        {
+                          "text": "Number of results found for 5 Miles: 200\n"
+                        },
+                        {
+                          "text": "Selected radius: 10 Miles\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button after selecting radius\n"
+                        },
+                        {
+                          "text": "Number of results found for 10 Miles: 200\n"
+                        },
+                        {
+                          "text": "Selected radius: 25 Miles\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button after selecting radius\n"
+                        },
+                        {
+                          "text": "Number of results found for 25 Miles: 200\n"
+                        },
+                        {
+                          "text": "Selected radius: 50 Miles\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button after selecting radius\n"
+                        },
+                        {
+                          "text": "Number of results found for 50 Miles: 200\n"
+                        },
+                        {
+                          "text": "Selected radius: 75 Miles\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button after selecting radius\n"
+                        },
+                        {
+                          "text": "Number of results found for 75 Miles: 200\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-09-20T20:40:40.748Z",
+                      "startTime": "2024-09-23T19:22:58.735Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Firefox",
+                  "projectName": "Desktop Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 79,
+                      "status": "passed",
+                      "duration": 5173,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Entered zip code: 90806\n"
+                        },
+                        {
+                          "text": "Pressed Enter to select the suggested city\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button\n"
+                        },
+                        {
+                          "text": "Number of results found: 200\n"
+                        },
+                        {
+                          "text": "Selected radius: 5 Miles\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button after selecting radius\n"
+                        },
+                        {
+                          "text": "Number of results found for 5 Miles: 200\n"
+                        },
+                        {
+                          "text": "Selected radius: 10 Miles\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button after selecting radius\n"
+                        },
+                        {
+                          "text": "Number of results found for 10 Miles: 200\n"
+                        },
+                        {
+                          "text": "Selected radius: 25 Miles\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button after selecting radius\n"
+                        },
+                        {
+                          "text": "Number of results found for 25 Miles: 200\n"
+                        },
+                        {
+                          "text": "Selected radius: 50 Miles\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button after selecting radius\n"
+                        },
+                        {
+                          "text": "Number of results found for 50 Miles: 200\n"
+                        },
+                        {
+                          "text": "Selected radius: 75 Miles\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button after selecting radius\n"
+                        },
+                        {
+                          "text": "Number of results found for 75 Miles: 200\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-23T19:23:29.770Z",
                       "attachments": []
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "03c86bedec7fd5afb64a-e6562af145df8de8f87c",
-              "file": "tests/memorialcareEventsMobile.spec.js",
-              "line": 121,
+              "id": "cefbd44b4562531e4678-29641f40fd6b76ba3852",
+              "file": "tests/memorialcareLocationsDesktop.spec.js",
+              "line": 97,
               "column": 5
             },
             {
-              "title": "Verify the presence of the Hosted By dropdown on mobile",
+              "title": "Verify \"View Details\" link opens the correct location details",
               "ok": true,
               "tags": [],
               "tests": [
@@ -348,42 +797,298 @@
                   "projectName": "Desktop Chrome",
                   "results": [
                     {
-                      "workerIndex": 31,
+                      "workerIndex": 77,
                       "status": "passed",
-                      "duration": 4569,
+                      "duration": 9891,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Clicked on the hamburger button to open the mobile menu\n"
+                          "text": "Navigated to locations page\n"
                         },
                         {
-                          "text": "Clicked on the Events button in the mobile menu\n"
+                          "text": "Entered zip code: 90806\n"
                         },
                         {
-                          "text": "Clicked on the Filter Results button on attempt 1\n"
+                          "text": "Pressed Enter to select the suggested city\n"
                         },
                         {
-                          "text": "Filter Results section is visible after clicking the button.\n"
+                          "text": "Clicked the \"Filter Results\" button\n"
                         },
                         {
-                          "text": "Filter Results section is visible\n"
+                          "text": "First location record is visible\n"
                         },
                         {
-                          "text": "Verified that the Hosted By dropdown is present and visible.\n"
+                          "text": "Detail record link: /locations/long-beach-medical-center\n"
+                        },
+                        {
+                          "text": "Clicked on the \"View Details\" link\n"
+                        },
+                        {
+                          "text": "Navigated to the correct location details page: https://www.memorialcare.org/locations/long-beach-medical-center\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-09-20T20:40:44.775Z",
+                      "startTime": "2024-09-23T19:22:35.262Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Safari",
+                  "projectName": "Desktop Safari",
+                  "results": [
+                    {
+                      "workerIndex": 78,
+                      "status": "passed",
+                      "duration": 3990,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Entered zip code: 90806\n"
+                        },
+                        {
+                          "text": "Pressed Enter to select the suggested city\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button\n"
+                        },
+                        {
+                          "text": "First location record is visible\n"
+                        },
+                        {
+                          "text": "Detail record link: /locations/long-beach-medical-center\n"
+                        },
+                        {
+                          "text": "Clicked on the \"View Details\" link\n"
+                        },
+                        {
+                          "text": "Navigated to the correct location details page: https://www.memorialcare.org/locations/long-beach-medical-center\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-23T19:23:11.992Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Firefox",
+                  "projectName": "Desktop Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 79,
+                      "status": "passed",
+                      "duration": 5322,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Entered zip code: 90806\n"
+                        },
+                        {
+                          "text": "Pressed Enter to select the suggested city\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button\n"
+                        },
+                        {
+                          "text": "First location record is visible\n"
+                        },
+                        {
+                          "text": "Detail record link: /locations/long-beach-medical-center\n"
+                        },
+                        {
+                          "text": "Clicked on the \"View Details\" link\n"
+                        },
+                        {
+                          "text": "Navigated to the correct location details page: https://www.memorialcare.org/locations/long-beach-medical-center\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-23T19:23:34.947Z",
                       "attachments": []
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "03c86bedec7fd5afb64a-d453336a234fd2339f60",
-              "file": "tests/memorialcareEventsMobile.spec.js",
-              "line": 141,
+              "id": "cefbd44b4562531e4678-4019339555397113bdfa",
+              "file": "tests/memorialcareLocationsDesktop.spec.js",
+              "line": 138,
+              "column": 5
+            },
+            {
+              "title": "Verify \"View on Map\" function links to the correct map pin",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Chrome",
+                  "projectName": "Desktop Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 77,
+                      "status": "passed",
+                      "duration": 2429,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Entered zip code: 90806\n"
+                        },
+                        {
+                          "text": "Pressed Enter to select the suggested city\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button\n"
+                        },
+                        {
+                          "text": "First location record is visible\n"
+                        },
+                        {
+                          "text": "Clicked on the \"View on Map\" link\n"
+                        },
+                        {
+                          "text": "Active map pin is visible\n"
+                        },
+                        {
+                          "text": "Active map pin corresponds to: \n                    Long Beach Medical Center\n                  \n"
+                        },
+                        {
+                          "text": "Verified that the map pin corresponds to the correct location: \n                    Long Beach Medical Center\n                  \n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-23T19:22:45.156Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Safari",
+                  "projectName": "Desktop Safari",
+                  "results": [
+                    {
+                      "workerIndex": 78,
+                      "status": "passed",
+                      "duration": 2642,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Entered zip code: 90806\n"
+                        },
+                        {
+                          "text": "Pressed Enter to select the suggested city\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button\n"
+                        },
+                        {
+                          "text": "First location record is visible\n"
+                        },
+                        {
+                          "text": "Clicked on the \"View on Map\" link\n"
+                        },
+                        {
+                          "text": "Active map pin is visible\n"
+                        },
+                        {
+                          "text": "Active map pin corresponds to: \n                    Long Beach Medical Center\n                  \n"
+                        },
+                        {
+                          "text": "Verified that the map pin corresponds to the correct location: \n                    Long Beach Medical Center\n                  \n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-23T19:23:15.986Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Firefox",
+                  "projectName": "Desktop Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 79,
+                      "status": "passed",
+                      "duration": 3160,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to locations page\n"
+                        },
+                        {
+                          "text": "Entered zip code: 90806\n"
+                        },
+                        {
+                          "text": "Pressed Enter to select the suggested city\n"
+                        },
+                        {
+                          "text": "Clicked the \"Filter Results\" button\n"
+                        },
+                        {
+                          "text": "First location record is visible\n"
+                        },
+                        {
+                          "text": "Clicked on the \"View on Map\" link\n"
+                        },
+                        {
+                          "text": "Active map pin is visible\n"
+                        },
+                        {
+                          "text": "Active map pin corresponds to: \n                    Long Beach Medical Center\n                  \n"
+                        },
+                        {
+                          "text": "Verified that the map pin corresponds to the correct location: \n                    Long Beach Medical Center\n                  \n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-23T19:23:40.276Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cefbd44b4562531e4678-78e09e3eafad154f17f7",
+              "file": "tests/memorialcareLocationsDesktop.spec.js",
+              "line": 170,
               "column": 5
             }
           ]
@@ -393,9 +1098,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-09-20T20:40:25.887Z",
-    "duration": 23499.519000023603,
-    "expected": 6,
+    "startTime": "2024-09-23T19:22:03.585Z",
+    "duration": 99893.28600001335,
+    "expected": 18,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

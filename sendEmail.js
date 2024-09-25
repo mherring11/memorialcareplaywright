@@ -21,7 +21,7 @@ async function sendEmail() {
 
     let mailOptions = {
         from: 'm.herring11@yahoo.com',
-        to: 'mherring@clickherelabs.com',
+        to: 'mherring@clickherelabs.com', 
         subject: `Playwright Test Result: ${testResult}`,
         text: `Attached are the screenshots from the latest Playwright test. The test result is: ${testResult}.`,
         attachments: files

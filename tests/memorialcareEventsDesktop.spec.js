@@ -1,24 +1,37 @@
 const { test, expect } = require('@playwright/test');
 
 test.describe('MemorialCare Events Page Test', () => {
+    let context;
+    let page;
 
-    test('Verify that the current events load when the page loads', async ({ page }) => {
-        test.setTimeout(90000); 
+    // Create a new context and page for each test to ensure isolation
+    test.beforeEach(async ({ browser }) => {
+        context = await browser.newContext();
+        page = await context.newPage();
+    });
+
+    // Close context after each test to free up resources
+    test.afterEach(async () => {
+        await page.close();
+        await context.close();
+    });
+
+    test('Verify that the current events load when the page loads', async () => {
+        test.setTimeout(90000);
        
-        await page.goto('https://www.memorialcare.org/events');
+        await page.goto('https://www.memorialcare.org/events', { waitUntil: 'networkidle' });
+        console.log('Navigated to MemorialCare events page');
 
         const eventCardSelector = '.event-listing__event-card';
-        
         await page.waitForSelector(eventCardSelector, { state: 'visible', timeout: 15000 });
-
         const eventCards = await page.$$(eventCardSelector);
+        
         expect(eventCards.length).toBeGreaterThan(0);
-
         console.log(`Verified that ${eventCards.length} event(s) are loaded on the page.`);
     });
-    
-    test('Verify that the "Learn More" links on the first two event cards are present and visible', async ({ page }) => {
-        await page.goto('https://www.memorialcare.org/events');
+
+    test('Verify that the "Learn More" links on the first two event cards are present and visible', async () => {
+        await page.goto('https://www.memorialcare.org/events', { waitUntil: 'networkidle' });
         console.log('Navigated to MemorialCare events page');
     
         const eventCardSelector = '.event-listing__event-card';
@@ -35,22 +48,19 @@ test.describe('MemorialCare Events Page Test', () => {
         console.log('Verified that the second "Learn More" link is present and visible.');
     });
 
-   
-test('Verify that the keyword filter input is present and visible', async ({ page }) => {
-    await page.goto('https://www.memorialcare.org/events');
-    console.log('Navigated to MemorialCare events page');
+    test('Verify that the keyword filter input is present and visible', async () => {
+        await page.goto('https://www.memorialcare.org/events', { waitUntil: 'networkidle' });
+        console.log('Navigated to MemorialCare events page');
 
-    const keywordInputSelector = 'input[data-drupal-selector="edit-aggregated-field"]';
+        const keywordInputSelector = 'input[data-drupal-selector="edit-aggregated-field"]';
 
-    const isKeywordInputVisible = await page.isVisible(keywordInputSelector);
-    expect(isKeywordInputVisible).toBe(true);
-    console.log('Verified that the keyword filter input is present and visible.');
-});
+        const isKeywordInputVisible = await page.isVisible(keywordInputSelector);
+        expect(isKeywordInputVisible).toBe(true);
+        console.log('Verified that the keyword filter input is present and visible.');
+    });
 
-    test('Verify that the Event Date min/max inputs are present and visible', async ({ page }) => {
-        test.setTimeout(30000);
-
-        await page.goto('https://www.memorialcare.org/events');
+    test('Verify that the Event Date min/max inputs are present and visible', async () => {
+        await page.goto('https://www.memorialcare.org/events', { waitUntil: 'networkidle' });
         console.log('Navigated to MemorialCare events page');
     
         const minDateInputSelector = 'input[data-drupal-selector="edit-date-range-min"] + input';
@@ -65,10 +75,8 @@ test('Verify that the keyword filter input is present and visible', async ({ pag
         console.log('Verified that the Max date input is present and visible.');
     });    
 
-    test('Verify presence of Service Line block', async ({ page }) => {
-        test.setTimeout(30000);
-
-        await page.goto('https://www.memorialcare.org/events');
+    test('Verify presence of Service Line block', async () => {
+        await page.goto('https://www.memorialcare.org/events', { waitUntil: 'networkidle' });
         console.log('Navigated to MemorialCare events page');
     
         const serviceLineBlockSelector = '#block-revent-service-lines';
@@ -78,10 +86,8 @@ test('Verify that the keyword filter input is present and visible', async ({ pag
         console.log('Verified that the Service Line block is present and visible.');
     });
     
-    test('Verify presence of Category block', async ({ page }) => {
-        test.setTimeout(30000);
-    
-        await page.goto('https://www.memorialcare.org/events');
+    test('Verify presence of Category block', async () => {
+        await page.goto('https://www.memorialcare.org/events', { waitUntil: 'networkidle' });
         console.log('Navigated to MemorialCare events page');
     
         const categoryBlockSelector = '#block-revent-category';
@@ -91,10 +97,8 @@ test('Verify that the keyword filter input is present and visible', async ({ pag
         console.log('Verified that the Category block is present and visible.');
     });
     
-    test('Verify presence of Hosted By block', async ({ page }) => {
-        test.setTimeout(30000);
-    
-        await page.goto('https://www.memorialcare.org/events');
+    test('Verify presence of Hosted By block', async () => {
+        await page.goto('https://www.memorialcare.org/events', { waitUntil: 'networkidle' });
         console.log('Navigated to MemorialCare events page');
     
         const hostedByBlockSelector = '#block-revent-hosted-by';
@@ -103,5 +107,5 @@ test('Verify that the keyword filter input is present and visible', async ({ pag
         expect(isHostedByBlockVisible).toBe(true);
         console.log('Verified that the Hosted By block is present and visible.');
     });
-    
+
 });

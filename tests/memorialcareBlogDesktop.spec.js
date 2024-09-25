@@ -4,6 +4,14 @@ const url = 'https://www.memorialcare.org/blog';
 
 test.describe('MemorialCare Blog Tests', () => {
 
+    async function goToPageAndWaitForLoad(page, url) {
+        await page.goto(url, { waitUntil: 'domcontentloaded' });
+        console.log(`Navigated to the URL: ${url}`);
+
+        await page.waitForLoadState('networkidle');
+        console.log('Page loaded with network idle state.');
+    }
+
     test('Verify that the current blog posts load when the page loads', async ({ page }) => {
         test.setTimeout(30000);
 

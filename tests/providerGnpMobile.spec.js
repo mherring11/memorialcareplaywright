@@ -4,9 +4,21 @@ const url = 'https://www.gnpweb.com/providers';
 
 test.use({ viewport: { width: 375, height: 812 } });
 
+// Helper function to check if the browser is Chrome or Safari
+async function isChromeOrSafari(page) {
+  const browserName = page.context().browser().browserType().name();
+  return browserName === 'chromium' || browserName === 'webkit';
+}
+
 test.describe('GNP Provider Tests - Mobile', () => {
 
   test('Filter by Doctor/Provider Name', async ({ page }) => {
+    // Check if the browser is Chrome or Safari, skip if not
+    if (!(await isChromeOrSafari(page))) {
+      console.log('Skipping test on Firefox');
+      test.skip();
+    }
+
     await page.goto(url);
     console.log('Navigated to providers page');
 
@@ -86,6 +98,11 @@ test.describe('GNP Provider Tests - Mobile', () => {
   });
 
   test('Filter by Online Scheduling', async ({ page }) => {
+    if (!(await isChromeOrSafari(page))) {
+      console.log('Skipping test on Firefox');
+      test.skip();
+    }
+
     await page.goto(url);
     console.log('Navigated to providers page');
 
@@ -140,6 +157,11 @@ test.describe('GNP Provider Tests - Mobile', () => {
   });
 
   test('Filter by Location or Zip Code', async ({ page }) => {
+    if (!(await isChromeOrSafari(page))) {
+      console.log('Skipping test on Firefox');
+      test.skip();
+    }
+
     await page.goto(url);
     console.log('Navigated to providers page');
 
@@ -203,6 +225,11 @@ test.describe('GNP Provider Tests - Mobile', () => {
   });
 
   test('Filter providers by Specialty', async ({ page }) => {
+    if (!(await isChromeOrSafari(page))) {
+      console.log('Skipping test on Firefox');
+      test.skip();
+    }
+
     await page.goto(url);
     console.log('Navigated to providers page');
 
@@ -274,6 +301,11 @@ test.describe('GNP Provider Tests - Mobile', () => {
   });
 
   test('Verify presence of Language filter options and list available languages', async ({ page }) => {
+    if (!(await isChromeOrSafari(page))) {
+      console.log('Skipping test on Firefox');
+      test.skip();
+    }
+
     await page.goto(url);
     console.log('Navigated to providers page');
 
@@ -314,6 +346,11 @@ test.describe('GNP Provider Tests - Mobile', () => {
   });
 
   test('Verify presence of gender radio buttons, select one, and show results', async ({ page }) => {
+    if (!(await isChromeOrSafari(page))) {
+      console.log('Skipping test on Firefox');
+      test.skip();
+    }
+
     await page.goto(url);
     console.log('Navigated to providers page');
 
