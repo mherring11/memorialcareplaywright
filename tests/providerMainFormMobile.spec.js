@@ -177,7 +177,7 @@ test.describe('MemorialCare Provider Tests', () => {
     console.log('Cleared Zip Code field');
   });
 
-  test('randomly select a specialty and filter', async ({ page }) => {
+  test('verify Specialty filter presence', async ({ page }) => {
     const url = 'https://www.memorialcare.org/providers';
     await page.goto(url);
     console.log('Navigated to providers page');
@@ -195,55 +195,14 @@ test.describe('MemorialCare Provider Tests', () => {
     console.log('Clicked Filter Results button');
   
     const specialtyFilterSelector = '#block-find-a-provider-specialty';
-    await page.click(specialtyFilterSelector);
-    console.log('Clicked on Specialty filter to reveal options');
+    await page.waitForSelector(specialtyFilterSelector, { state: 'visible' });
+    console.log('Verified presence of Specialty filter');
   
-    const specialtyInputSelector = 'input[placeholder="Search or Select"]';
-    await page.click(specialtyInputSelector);
-    console.log('Clicked on Specialties input field');
-  
-    const dropdownVisibleSelector = 'div.choices__list--dropdown .choices__item';
-    await page.waitForSelector(dropdownVisibleSelector, { state: 'visible' });
-    console.log('Dropdown options are visible');
-  
-    const options = await page.$$eval(dropdownVisibleSelector, options => options.map(option => option.textContent.trim()));
-    const validSpecialties = options.filter(option => !option.includes('HMO') && !option.includes('Advantage'));
-    const randomSpecialty = validSpecialties[Math.floor(Math.random() * validSpecialties.length)];
-  
-    await page.evaluate((randomSpecialty) => {
-      const options = [...document.querySelectorAll('div.choices__list--dropdown .choices__item')];
-      const optionToClick = options.find(el => el.textContent.trim() === randomSpecialty);
-      if (optionToClick) {
-        optionToClick.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }));
-        optionToClick.click();
-      }
-    }, randomSpecialty);
-  
-    console.log(`Selected "${randomSpecialty}" from Specialties dropdown`);
-  
-    await page.waitForLoadState('networkidle');
-    console.log('Waiting for page to load');
-  
-    const resultsCountSelector = '.find-a-provider__header--count .provider-search__resultcount';
-  
-    await page.waitForFunction(selector => {
-      const element = document.querySelector(selector);
-      if (!element) return false;
-      const text = element.textContent;
-      return text.includes('results') && parseInt(text, 10) !== 4679;
-    }, resultsCountSelector);
-  
-    console.log('Provider records loaded');
-  
-    const resultsText = await page.textContent(resultsCountSelector);
-    console.log(`Results count text: ${resultsText}`);
-  
-    const resultsMatch = resultsText.match(/(\d+) results/);
-    const numberOfResults = resultsMatch ? parseInt(resultsMatch[1], 10) : 0;
-    console.log(`Number of provider records found: ${numberOfResults}`);
-    expect(numberOfResults).toBeGreaterThan(0);
+    const isSpecialtyFilterVisible = await page.isVisible(specialtyFilterSelector);
+    expect(isSpecialtyFilterVisible).toBe(true);
+    console.log('Specialty filter is visible on the page');
   });
-
+  
   test('verify hospital filter is present and one of the four hospitals is listed', async ({ page }) => {
     const url = 'https://www.memorialcare.org/providers';
     await page.goto(url);

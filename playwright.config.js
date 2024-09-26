@@ -9,7 +9,11 @@ module.exports = {
     viewport: null,
     ignoreHTTPSErrors: true,
     video: 'off',
+    screenshot: 'only-on-failure', 
+    trace: 'retain-on-failure',    
+    retries: 2,
   },
+  maxFailures: 0, 
   projects: isMobileTest
     ? [
         {
