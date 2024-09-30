@@ -86,151 +86,468 @@
   },
   "suites": [
     {
-      "title": "tests/memorialcareEventsMobile.spec.js",
-      "file": "tests/memorialcareEventsMobile.spec.js",
+      "title": "tests/gnpHeaderFooterDesktop.spec.js",
+      "file": "tests/gnpHeaderFooterDesktop.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "MemorialCare Events Page Mobile Test",
-          "file": "tests/memorialcareEventsMobile.spec.js",
-          "line": 5,
-          "column": 6,
+          "title": "GNP Website Header and Footer Desktop Tests",
+          "file": "tests/gnpHeaderFooterDesktop.spec.js",
+          "line": 4,
+          "column": 15,
           "specs": [
             {
-              "title": "Verify the presence of the Service Lines section on the MemorialCare Events page",
+              "title": "Verify that the header is visible and all links are working on Desktop",
               "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 20000,
+                  "timeout": 120000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "Desktop Chrome",
                   "projectName": "Desktop Chrome",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 47,
                       "status": "passed",
-                      "duration": 4293,
+                      "duration": 43308,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Clicked on the hamburger button to open the mobile menu\n"
+                          "text": "Navigated to GNP website\n"
                         },
                         {
-                          "text": "Clicked on the Events button in the mobile menu\n"
+                          "text": "Header is visible on the page\n"
                         },
                         {
-                          "text": "Clicked on the Filter Results button on attempt 1\n"
+                          "text": "Verified that the header is loaded and visible\n"
                         },
                         {
-                          "text": "Filter Results section is visible after clicking the button.\n"
+                          "text": "Verified existence of header link: a[href=\"/about-us\"]\n"
                         },
                         {
-                          "text": "Service Lines section is present and visible.\n"
+                          "text": "Verified navigation to: https://stg.gnpweb.com/about-us\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/contact-us\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/contact-us\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/health-resources\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/health-resources\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"https://physicians.gnpweb.com\"]\n"
+                        },
+                        {
+                          "text": "Verified that external link opens in a new tab: https://physicians.gnpweb.com\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/become-patient\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/become-patient\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/locations\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/locations\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/gnp-events\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/gnp-events\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/about-us/member-resources\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/about-us/member-resources\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/press-room\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/press-room\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/long-beach\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/long-beach\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/providers\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/providers\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-09-26T17:00:16.457Z",
+                      "startTime": "2024-09-30T16:13:25.883Z",
                       "attachments": []
                     }
                   ],
                   "status": "expected"
                 },
                 {
-                  "timeout": 20000,
+                  "timeout": 120000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "Desktop Safari",
                   "projectName": "Desktop Safari",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 48,
                       "status": "passed",
-                      "duration": 6657,
+                      "duration": 82422,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Clicked on the hamburger button to open the mobile menu\n"
+                          "text": "Navigated to GNP website\n"
                         },
                         {
-                          "text": "Clicked on the Events button in the mobile menu\n"
+                          "text": "Header is visible on the page\n"
                         },
                         {
-                          "text": "Clicked on the Filter Results button on attempt 1\n"
+                          "text": "Verified that the header is loaded and visible\n"
                         },
                         {
-                          "text": "Filter Results section is not visible, retrying...\n"
+                          "text": "Verified existence of header link: a[href=\"/about-us\"]\n"
                         },
                         {
-                          "text": "Clicked on the Filter Results button on attempt 2\n"
+                          "text": "Verified navigation to: https://stg.gnpweb.com/about-us\n"
                         },
                         {
-                          "text": "Filter Results section is visible after clicking the button.\n"
+                          "text": "Verified existence of header link: a[href=\"/contact-us\"]\n"
                         },
                         {
-                          "text": "Service Lines section is present and visible.\n"
+                          "text": "Verified navigation to: https://stg.gnpweb.com/contact-us\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/health-resources\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/health-resources\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"https://physicians.gnpweb.com\"]\n"
+                        },
+                        {
+                          "text": "Verified that external link opens in a new tab: https://physicians.gnpweb.com\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/become-patient\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/become-patient\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/locations\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/locations\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/gnp-events\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/gnp-events\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/about-us/member-resources\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/about-us/member-resources\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/press-room\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/press-room\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/long-beach\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/long-beach\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/providers\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/providers\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-09-26T17:00:22.044Z",
+                      "startTime": "2024-09-30T16:14:11.068Z",
                       "attachments": []
                     }
                   ],
                   "status": "expected"
                 },
                 {
-                  "timeout": 20000,
+                  "timeout": 120000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "Desktop Firefox",
                   "projectName": "Desktop Firefox",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 49,
                       "status": "passed",
-                      "duration": 6345,
+                      "duration": 20546,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Clicked on the hamburger button to open the mobile menu\n"
+                          "text": "Navigated to GNP website\n"
                         },
                         {
-                          "text": "Clicked on the Events button in the mobile menu\n"
+                          "text": "Header is visible on the page\n"
                         },
                         {
-                          "text": "Clicked on the Filter Results button on attempt 1\n"
+                          "text": "Verified that the header is loaded and visible\n"
                         },
                         {
-                          "text": "Filter Results section is not visible, retrying...\n"
+                          "text": "Verified existence of header link: a[href=\"/about-us\"]\n"
                         },
                         {
-                          "text": "Clicked on the Filter Results button on attempt 2\n"
+                          "text": "Verified navigation to: https://stg.gnpweb.com/about-us\n"
                         },
                         {
-                          "text": "Filter Results section is visible after clicking the button.\n"
+                          "text": "Verified existence of header link: a[href=\"/contact-us\"]\n"
                         },
                         {
-                          "text": "Service Lines section is present and visible.\n"
+                          "text": "Verified navigation to: https://stg.gnpweb.com/contact-us\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/health-resources\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/health-resources\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"https://physicians.gnpweb.com\"]\n"
+                        },
+                        {
+                          "text": "Verified that external link opens in a new tab: https://physicians.gnpweb.com\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/become-patient\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/become-patient\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/locations\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/locations\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/gnp-events\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/gnp-events\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/about-us/member-resources\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/about-us/member-resources\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/press-room\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/press-room\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/long-beach\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/long-beach\n"
+                        },
+                        {
+                          "text": "Verified existence of header link: a[href=\"/providers\"]\n"
+                        },
+                        {
+                          "text": "Verified navigation to: https://stg.gnpweb.com/providers\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-09-26T17:00:29.601Z",
+                      "startTime": "2024-09-30T16:15:35.226Z",
                       "attachments": []
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "03c86bedec7fd5afb64a-e6562af145df8de8f87c",
-              "file": "tests/memorialcareEventsMobile.spec.js",
-              "line": 119,
-              "column": 5
+              "id": "076d368de0231a91b65b-f0452f74ba70bbeba69f",
+              "file": "tests/gnpHeaderFooterDesktop.spec.js",
+              "line": 7,
+              "column": 3
+            },
+            {
+              "title": "Verify that all footer links are present on Desktop",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Chrome",
+                  "projectName": "Desktop Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 47,
+                      "status": "passed",
+                      "duration": 569,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to GNP website\n"
+                        },
+                        {
+                          "text": "Footer is visible on the page\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"https://careers.memorialcare.org/\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"/contact-us\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"https://www.memorialcare.org\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"https://physicians.gnpweb.com\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"/policies-legal-notices/privacy-policy\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"/policies-legal-notices/terms-use\"]\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-30T16:14:09.865Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Safari",
+                  "projectName": "Desktop Safari",
+                  "results": [
+                    {
+                      "workerIndex": 48,
+                      "status": "passed",
+                      "duration": 885,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to GNP website\n"
+                        },
+                        {
+                          "text": "Footer is visible on the page\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"https://careers.memorialcare.org/\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"/contact-us\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"https://www.memorialcare.org\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"https://physicians.gnpweb.com\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"/policies-legal-notices/privacy-policy\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"/policies-legal-notices/terms-use\"]\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-30T16:15:33.709Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Firefox",
+                  "projectName": "Desktop Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 49,
+                      "status": "passed",
+                      "duration": 577,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Navigated to GNP website\n"
+                        },
+                        {
+                          "text": "Footer is visible on the page\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"https://careers.memorialcare.org/\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"/contact-us\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"https://www.memorialcare.org\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"https://physicians.gnpweb.com\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"/policies-legal-notices/privacy-policy\"]\n"
+                        },
+                        {
+                          "text": "Verified existence of footer link: a[href=\"/policies-legal-notices/terms-use\"]\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-09-30T16:15:56.474Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "076d368de0231a91b65b-e46f48bee54452f35fb4",
+              "file": "tests/gnpHeaderFooterDesktop.spec.js",
+              "line": 69,
+              "column": 3
             }
           ]
         }
@@ -239,9 +556,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-09-26T17:00:15.482Z",
-    "duration": 21127.815999999642,
-    "expected": 3,
+    "startTime": "2024-09-30T16:13:24.378Z",
+    "duration": 152689.70899999142,
+    "expected": 6,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
